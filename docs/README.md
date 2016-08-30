@@ -31,7 +31,7 @@ Phase 2: CheckIn Model, API, and components (2 - 3 days)
     CheckInItem
     Add Drinks Component
     Comments (Jbuilder views and components)
-    Cheers (Jbuilder views and components)
+    Loves (Jbuilder views and components)
     Style checkIns components
     Seed checkIns
     Review Phase 2

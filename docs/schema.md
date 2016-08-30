@@ -12,13 +12,10 @@
 # Table name: checkIn
 #
 #  id          :integer          not null, primary key
-<!-- #  user        :string           not null -->
 #  user_id     :integer          not null
-<!-- #  drink       :string           not null -->
 #  drink_id    :integer          not null
 #  rating      :integer          not null
 #  review      :text        
-<!-- #  location    :string   -->
 #  location_id :integer        
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -30,6 +27,12 @@
 #  user_id     :integer          not null
 #  checkIn_id  :integer          not null
 #  body        :text             not null
+
+# Table name: loves
+#
+#  id          :integer          not null
+#  user_id     :integer          not null
+#  checkIn_id  :integer          not null
 
 # Table name: friendings
 # 'has_friendship' gem will create this table
@@ -71,14 +74,21 @@
 #
 #     has_friendship
 #     has_many :comments
+#     has_many :loves
 
 
 # CheckIn Associations
 #
 #      belongs_to user
 #      has_many :comments
+#      has_many :loves
 #
 # Comments Associations
 #
 #      belongs_to :user
 #      belongs_to :checkIn
+#
+# Loves Associations
+#
+#     belongs_to :user
+#     belongs_to :checkIn

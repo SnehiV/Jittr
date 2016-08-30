@@ -1,6 +1,6 @@
 -AuthFormContainer
   -SplashPage
-    -AuthForm (sign-in or sign up)
+  -AuthForm (sign-in or sign up)
 
 -HomeContainer
   -Home   ()
@@ -33,9 +33,9 @@
 -UserProfileContainer
   -UserProfile
     -Cover
-      -UserStatsContainer
-    -checkInFeedContainer
-    -TopRatedContainer
+      -UserStats
+    -checkInFeed
+    -TopRated
 
 -FriendsContainer
   -Friends
@@ -49,7 +49,7 @@
 
 -TopRankedContainer (Bonus)
   -TopRanked
-  -UserStatsContainer
+  -UserStats
 
 
 
