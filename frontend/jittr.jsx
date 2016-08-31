@@ -14,6 +14,12 @@ window.signUp = signUp;
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById('root');
-  const store = window.store = configureStore();
+
+  let preloadedState = {};
+  if (window.currentUser) {
+    preloadedState = {session: {currentUser: window.currentUser}};
+  }
+
+  const store = window.store = configureStore(preloadedState);
   ReactDOM.render(<div><Root store={store} /></div>, rootEl);
 });

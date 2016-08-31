@@ -1,28 +1,13 @@
 import React from 'react';
-import SessionContainer from './session_container';
 import { Provider } from 'react-redux';
-import App from './app';
-import { Router, Route, IndexRoute, hashHistroy } from 'react-router';
-import Splash from './splash';
+import RouterContainer from './router_container';
 
-const Root = ({ store }) => {
 
-const redirectIfLoggedIn = (nextState, replace) => {
-  if (store.getState().session.currentUser !== null){
-    replace("/home");
-  }
-};
+const Root = ({ store }) => (
 
-  return (
-    <Provider store={store}>
-        <Router history={hashHistroy}>
-              <Route path="/" component={Splash} onEnter={redirectIfLoggedIn} />
-              <Route path="signup" component={SessionContainer} />
-              <Route path="login"  component={SessionContainer} />
-              <Route path="home" component={App} />
-        </Router>
-    </Provider>
-  );
-};
+  <Provider store={store}>
+    <RouterContainer />
+  </Provider>
+);
 
 export default Root;
