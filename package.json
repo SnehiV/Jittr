@@ -36,6 +36,6 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "redux": "^3.5.2",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.1"
   }
 }

@@ -12,9 +12,9 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps({session}) {
     // debugger
-    if (this.props.session.currentUser !== nextProps.session.currentUser){
+    if (this.props.session.currentUser !== session.currentUser){
       this.props.router.replace("/home");
     }
   }
