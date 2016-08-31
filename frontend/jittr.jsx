@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import configureStore from './store/store';
+import Root from './components/root';
 
 //testing
 
@@ -14,5 +15,5 @@ window.signUp = signUp;
 document.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById('root');
   const store = window.store = configureStore();
-  ReactDOM.render(<div>entry</div>, rootEl);
+  ReactDOM.render(<div><Root store={store} /></div>, rootEl);
 });

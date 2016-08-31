@@ -24,7 +24,7 @@ export const receiveCurrentUser = (currentUser) => ({
 });
 
 export const receiveErrors = (errors) => ({
-  type: SessionConstants.LOGIN,
+  type: SessionConstants.RECEIVE_ERRORS,
   errors
 });
 

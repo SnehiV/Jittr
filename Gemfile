@@ -26,6 +26,11 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'has_friendship'
 
+group :production do
+  gem 'newrelic_rpm'
+  gem 'rails_12factor'
+end
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
