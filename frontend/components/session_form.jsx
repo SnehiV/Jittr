@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -7,20 +9,38 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-    this.props = props;
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.session.currentUser !== nextProps.session.currentUser){
+      this.props.router.replace("/home");
+    }
+  }
+
+  checkLoggedIn(currentSession){
+    if (this.props.session.currentUser !== currentSession.currentUser){
+      this.props.router.replace("/home");
+    }
   }
 
   update(field) {
     return e => this.setState({[field]: e.target.value});
   }
 
+  dispatch(userParams) {
+    if (this.props.location.pathname === "/login"){
+      return this.props.handleLogin(userParams);
+    } else if (this.props.location.pathname === "/signup") {
+      return this.props.handleSignUp(userParams);
+    }
+  }
+
   handleSubmit(){
-    let self = this;
     return (e) => {
       e.preventDefault();
       const userParams = {user: this.state};
-      this.props.handleSignUp(userParams);
+      this.dispatch(userParams);
       this.setState({username: "", password: ""});
     };
   }
@@ -49,4 +69,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

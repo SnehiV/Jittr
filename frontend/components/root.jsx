@@ -16,11 +16,10 @@ const redirectIfLoggedIn = (nextState, replace) => {
   return (
     <Provider store={store}>
         <Router history={hashHistroy}>
-            <Route path="/" component={Splash} onEnter={redirectIfLoggedIn}>
+              <Route path="/" component={Splash} onEnter={redirectIfLoggedIn} />
               <Route path="signup" component={SessionContainer} />
               <Route path="login"  component={SessionContainer} />
               <Route path="home" component={App} />
-            </Route>
         </Router>
     </Provider>
   );

@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save!
       session[:session_token] = @user.session_token
-      render json: :show
+      render :show
     else
       render json: @user.errors
     end
