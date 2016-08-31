@@ -1,6 +1,6 @@
 import React from 'react';
 import SessionContainer from './session_container';
-import App from './app';
+import IndexContainer from './index_container';
 import { Router, Route, IndexRoute, hashHistroy } from 'react-router';
 import Splash from './splash';
 
@@ -20,7 +20,7 @@ class AppRouter extends React.Component{
   _ensureLoggedIn(nextState, replace){
     const currentUser = this.props.currentUser;
     if (!currentUser) {
-      replace('/login');
+      replace('/');
     }
   }
 
@@ -30,7 +30,7 @@ class AppRouter extends React.Component{
         <Route path="/" component={Splash} onEnter={this._redirectIfLoggedIn} />
         <Route path="signup" component={SessionContainer} onEnter={this._redirectIfLoggedIn} />
         <Route path="login" component={SessionContainer} onEnter={this._redirectIfLoggedIn}/>
-        <Route path="home" component={App} onEnter={this._ensureLoggedIn}/>
+        <Route path="home" component={IndexContainer} onEnter={this._ensureLoggedIn}/>
       </Router>
     );
   }

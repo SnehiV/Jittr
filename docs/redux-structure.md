@@ -61,11 +61,11 @@ checkIn API Request Actions
     -format api response so only currentUser and friend checkIns are returned
     -receiveCheckIns is set as the success callback.
 
-  fetchUserCheckIns
+  <!-- fetchUserCheckIns
 
     -invoked from UserProfile didMount/willReceiveProps
     -GET /api/checkIns/:user_id is called.
-    -receiveCheckIns is set as the success callback.
+    -receiveCheckIns is set as the success callback. -->
 
   createCheckIn
     -invoked from Check In button onClick
