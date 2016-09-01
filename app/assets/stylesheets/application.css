@@ -17,13 +17,13 @@
 
 
 
-  .sessionForm {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    flex-direction: column;
-    height: 100%;
-    align-items: center;
+ .sessionForm {
+      display: flex;
+      justify-content: center;
+      width: 25%;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
   }
 
   .input1 {padding: 10px;margin: 0 5px 0 5px;}
@@ -35,7 +35,7 @@
 
   .submit-button {
     margin: 0 auto;
-    height: 10%;
+    height: 33%;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -56,7 +56,7 @@
      align-items: center;
    }
 
-   .logo-buttons{width: 15%;margin: 0 auto;height: 20%;display: flex;flex-direction: column;justify-content: flex-end;align-items: center;}
+   .logo-buttons{width: 100%;margin: 0 auto;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;}
 
    .splash-link{
      font-size: 25px;
@@ -66,17 +66,17 @@
    .login-fields {
      display: flex;
      justify-content: space-between;
-     margin: 0;
+     margin: 15px;
    }
 
    .field {
      background-image: url("https://s16.postimg.io/oyjyrm16b/jittr_logo1.png");
-     background-position: center center;
+     background-position: center 25%;
      background-repeat: no-repeat;
      display: flex;
      flex-direction: column;
      width: 100%;
-     height: 100%;
+     height: 50%;
      z-index: 1;
      justify-content: flex-end;
    }
@@ -91,4 +91,4 @@
      display: flex;
      justify-content: center;
      align-items: center;
- ``}
+   }
