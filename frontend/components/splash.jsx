@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router';
 
 const Splash = ({router, children}) => {
 
@@ -10,12 +11,19 @@ const Splash = ({router, children}) => {
   const handleSignUp = () => {
     router.push('/signup');
   };
+  // <button className="splash-link" onClick={handleLogin}>Log In</button>
+  // <button className="splash-link" onClick={handleSignUp}>Sign Up</button>
+
 
   return(
-    <div className="splash-buttons">
-      <button className="splash-button" onClick={handleLogin}>Log In</button>
-      <button classNAme="splash-button" onClick={handleSignUp}>Sign Up</button>
-      {children}
+    <div className="splash-page">
+      <div className="logo-buttons">
+        <div className="splash-links">
+          <Link to="/login" className="splash-link">Log In</Link>
+          <Link to="/signup" className="splash-link">Sign Up</Link>
+          {children}
+        </div>
+      </div>
     </div>
   );
 };

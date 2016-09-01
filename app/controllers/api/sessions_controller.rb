@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       session[:session_token] = @user.reset_session_token!
       render json: @user
     else
-      render json: 'Invalid Crednetials'
+      render json: 'Invalid Credentials'
     end
   end
 
