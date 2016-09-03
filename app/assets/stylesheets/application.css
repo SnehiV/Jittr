@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+
+
+ html, head, body, header,
+ nav, h1, a, ul, li, main,
+ section, p, footer, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: none;
+   vertical-align: inherit;
+   box-sizing: border-box;
+   background: transparent;
+   height: 100%;
+ }
+
+ header, nav, main, section,
+ footer, small {
+   display: block;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+
+
+ .sessionForm {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      flex-direction: column;
+      height: 50%;
+      align-items: center;
+  }
+
+  .input1 {padding: 10px;margin: 0 5px 0 5px;}
+
+  .button1 {
+      display: block;
+      width: 33%;
+  }
+
+  .submit-button {
+    margin: 0 auto;
+    height: 33%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .splash-page{
+     background-image: url("https://hd.unsplash.com/photo-1428550443830-190057dc8098");
+     background-position: center center;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 0;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+   }
+
+   .logo-buttons{
+     height: 40%;
+     display:
+     flex;width: 50%;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     color: moccasin;}
+
+   .splash-link{
+     font-size: 25px;
+     font-family: sans-serif;
+     padding: 10px;
+     text-decoration: none;
+     color: moccasin;
+   }
+   .login-fields {
+     display: flex;
+     justify-content: space-between;
+     margin: 15px;
+   }
+
+   .field {
+     display: flex;
+     flex-direction: column;
+     z-index: 1;
+     font-size: 750%;
+     margin: 0;
+     font-weight: inherit;
+     text-decoration: inherit;
+     color: moccasin;
+     text-align: center;
+     font-family: 'Calligraffitti';
+     font: cursive;
+     font-weight: bolder;
+   }
+
+   .form1 {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+   .splash-links {
+    display: flex;
+    margin: 20px;
+  }
+
+  .toggled-cups {
+    color: red;
+    font-size: 200%;
+  }
+
+  .untoggled-cups {
+    color: grey;
+    font-size: 200%;
+  }
+
+  .rating-cups > i:hover{
+    color: red;
+  }
