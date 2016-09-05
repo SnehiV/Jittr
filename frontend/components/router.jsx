@@ -1,10 +1,11 @@
 import React from 'react';
 import SessionContainer from './session_container';
 import IndexContainer from './index_container';
-import { Router, Route, IndexRoute, hashHistroy } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Splash from './splash';
 import CheckInItem from './check_in_item';
 import UserContainer from './user_profile_container';
+import App from './app';
 
 
 class AppRouter extends React.Component{
@@ -15,6 +16,7 @@ class AppRouter extends React.Component{
   }
 
   _redirectIfLoggedIn(nextState, replace){
+    debugger
     if (this.props.currentUser){
       replace("/home");
     }
@@ -26,15 +28,18 @@ class AppRouter extends React.Component{
       replace('/');
     }
   }
+  // onEnter={this._redirectIfLoggedIn}
 
   render(){
     return (
-      <Router history={hashHistroy}>
-        <Route path="/" component={Splash} onEnter={this._redirectIfLoggedIn} />
-        <Route path="signup" component={SessionContainer} onEnter={this._redirectIfLoggedIn} />
-        <Route path="login" component={SessionContainer} onEnter={this._redirectIfLoggedIn}/>
-        <Route path="home" component={IndexContainer} onEnter={this._ensureLoggedIn}/>
-        <Route path="users/:id" component={UserContainer} onEnter={this._ensureLoggedIn} />
+      <Router history={hashHistory}>
+        <Route path="/" component={App}>
+          <IndexRoute component={Splash} />
+          <Route path="signup" component={SessionContainer} onEnter={this._redirectIfLoggedIn} />
+          <Route path="login" component={SessionContainer} onEnter={this._redirectIfLoggedIn}/>
+          <Route path="home" component={IndexContainer} onEnter={this._ensureLoggedIn}/>
+          <Route path="users/:id" component={UserContainer} onEnter={this._ensureLoggedIn} />
+        </Route>
       </Router>
     );
   }

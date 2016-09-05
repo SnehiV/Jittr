@@ -10,9 +10,9 @@ export const friendRequest = (success, friendshipParams, error) => {
   });
 };
 
-export const requestResponse = (success, friendshipParams, error) => {
+export const requestResponse = (success, friendshipParams, currentUserId, error) => {
   $.ajax({
-    url: `api/friendships/${window.currentUser.id}`,
+    url: `api/friendships/${currentUserId}`,
     type: 'PATCH',
     data: friendshipParams,
     success: success,
@@ -20,9 +20,9 @@ export const requestResponse = (success, friendshipParams, error) => {
   });
 };
 
-export const deleteFriend = (success, friendshipParams, error) => {
+export const deleteFriend = (success, friendshipParams, currentUserId, error) => {
   $.ajax({
-    url: `api/friendships/${window.currentUser.id}`,
+    url: `api/friendships/${currentUserId}`,
     type: 'DELETE',
     data: friendshipParams,
     success: success,

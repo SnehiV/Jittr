@@ -10,12 +10,12 @@ class Index extends React.Component{
   constructor(props){
     super(props);
   }
-  componentWillReceiveProps(nextProps){
-    // debugger
-    if (nextProps.session.currentUser === null){
-      this.props.router.replace("/");
-    }
-  }
+  // componentWillReceiveProps(nextProps){
+  //   debugger
+  //   if (nextProps.session.currentUser === null){
+  //     this.props.router.replace("/");
+  //   }
+  // }
 
   componentWillMount(){
     this.props.fetchCheckIns();

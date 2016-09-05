@@ -7,17 +7,24 @@ import { friendRequest, requestResponse, fetchFriendships,
 
 
 const FriendshipMiddleware = store => next => action => {
+
  let success = (friendshipData) => store.dispatch(receiveFriendshipData(friendshipData));
  let error = (errors) => store.dispatch(receiveErrors(errors));
+
+ let currentUserId;
+ if (store.getState().session.currentUser){
+   currentUserId = store.getState().session.currentUser.id;
+ }
+
  switch (action.type) {
    case FriendshipConstants.REQUEST_FRIEND:
      friendRequest(success, action.friendshipParams, error);
      break;
    case FriendshipConstants.RESPOND_TO_REQUEST:
-     requestResponse(success, action.friendshipParams, error);
+     requestResponse(success, action.friendshipParams, currentUserId, error);
      break;
    case FriendshipConstants.REMOVE_FRIEND:
-     deleteFriend(success, action.friendshipParams, error);
+     deleteFriend(success, action.friendshipParams, currentUserId, error);
      break;
    case FriendshipConstants.REQUEST_FRIENDSHIP_DATA:
      fetchFriendships(success, error);

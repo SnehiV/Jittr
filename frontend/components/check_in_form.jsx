@@ -37,7 +37,7 @@ class CheckInForm extends React.Component{
 
 
   render() {
-    // debugger
+    debugger
     // const errors = this.props.session.errors.map(msg => (
     //   <li>
     //     {msg}

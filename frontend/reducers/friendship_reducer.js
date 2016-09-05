@@ -6,7 +6,6 @@ const FriendshipReducer = (state = {error: []}, action) =>  {
   switch (action.type) {
     case FriendshipConstants.RECEIVE_FRIENDSHIP_DATA:
       newState = merge({}, action.friendshipData, {error: []});
-      console.log(newState);
       return newState;
     case FriendshipConstants.RECEIVE_ERRORS:
       newState = merge({}, state, {error: []});
