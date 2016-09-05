@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
     return(
       <div className="splash-page">
         <form className="sessionForm" onSubmit={this.handleSubmit()}>
-            <h1 className="field">Jittr
+            <h1 className="field">Jittr</h1>
             <div className="splash-links">
               <input
                 className="input1"
@@ -74,9 +74,8 @@ class SessionForm extends React.Component {
             </div>
             <div className="submit-button">
               <button className="button1">Submit</button>
-              <ul className="errors">{errors}</ul>
             </div>
-            </h1>
+            <ul className="splash-errors">{errors}</ul>
         </form>
       </div>
     );

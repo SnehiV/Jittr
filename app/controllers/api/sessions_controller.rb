@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::SessionsController < ApplicationController
 
   def create
@@ -6,7 +8,7 @@ class Api::SessionsController < ApplicationController
       session[:session_token] = @user.reset_session_token!
       render json: @user
     else
-      render json: 'Invalid Credentials', status: 422
+      render json: ['Invalid credentials'], status: 422
     end
   end
 

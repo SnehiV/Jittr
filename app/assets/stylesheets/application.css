@@ -17,6 +17,7 @@
 
 
 
+
  html, head, body, header,
  nav, h1, a, ul, li, main,
  section, p, footer, small {
@@ -39,16 +40,24 @@
    display: block;
  }
 
- ul {
+ .splash-errors {
+   height: 50%;
    list-style: none;
+   width: 50%;
+   font-size: initial;
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+   color: moccasin;
  }
+
 
 
 
  .sessionForm {
       display: flex;
-      justify-content: center;
       width: 50%;
+      justify-content: center;
       flex-direction: column;
       height: 50%;
       align-items: center;
@@ -65,7 +74,7 @@
     margin: 0 auto;
     height: 33%;
     display: flex;
-    width: 100%;
+    width: 50%;
     justify-content: center;
     align-items: flex-start;
   }
@@ -107,9 +116,6 @@
    }
 
    .field {
-     display: flex;
-     flex-direction: column;
-     z-index: 1;
      font-size: 750%;
      margin: 0;
      font-weight: inherit;

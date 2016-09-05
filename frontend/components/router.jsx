@@ -16,7 +16,6 @@ class AppRouter extends React.Component{
   }
 
   _redirectIfLoggedIn(nextState, replace){
-    debugger
     if (this.props.currentUser){
       replace("/home");
     }
