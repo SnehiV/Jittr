@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router';
 
 
 class SessionForm extends React.Component {
@@ -56,7 +57,7 @@ class SessionForm extends React.Component {
     return(
       <div className="splash-page">
         <form className="sessionForm" onSubmit={this.handleSubmit()}>
-            <h1 className="field">Jittr</h1>
+            <h1 className="field"><Link to="/" className="logo">Jittr</Link></h1>
             <div className="splash-links">
               <input
                 className="input1"

@@ -51,8 +51,9 @@
    color: moccasin;
  }
 
-
-
+ a.logo {
+     height: inherit;
+ }
 
  .sessionForm {
       display: flex;

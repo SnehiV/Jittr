@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import Splash from './splash';
 import CheckInItem from './check_in_item';
 import UserContainer from './user_profile_container';
-import App from './app';
+import AppContainer from './app_container';
 
 
 class AppRouter extends React.Component{
@@ -32,7 +32,7 @@ class AppRouter extends React.Component{
   render(){
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={App}>
+        <Route path="/" component={AppContainer}>
           <IndexRoute component={Splash} />
           <Route path="signup" component={SessionContainer} onEnter={this._redirectIfLoggedIn} />
           <Route path="login" component={SessionContainer} onEnter={this._redirectIfLoggedIn}/>
