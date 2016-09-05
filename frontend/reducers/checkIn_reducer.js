@@ -3,7 +3,6 @@ import merge from 'lodash/merge';
 
 const CheckInReducer = (state = {}, action) => {
   let newState;
-  console.log(action);
   switch (action.type) {
     case CheckInConstants.RECEIVE_CHECK_IN:
       newState = merge({}, state, action.checkIn);

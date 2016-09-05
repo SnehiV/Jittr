@@ -5,21 +5,20 @@ import Root from './components/root';
 
 //testing
 
-import {CheckInConstants, newCheckIn,
-        updateCheckIn, deleteCheckIn,
-        requestCheckIns, receiveCheckIns,
-        receiveErrors, receiveCheckIn} from './actions/checkIn_actions';
-import { createCheckIn, fetchCheckIns, editCheckIn, destroyCheckIn } from './util/checkIn_api_util';
+  import {FriendshipConstants, requestFriend, respondToRequest,
+          removeFriend, requestFriendshipData,
+          receiveFriendshipData, receiveErrors} from './actions/friendship_actions';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById('root');
 
-  window.newCheckIn = newCheckIn;
-  window.updateCheckIn = updateCheckIn;
-  window.deleteCheckIn = deleteCheckIn;
-  window.requestCheckIns = requestCheckIns;
-  window.createCheckIn = createCheckIn;
-  // debugger
+  window.requestFriend = requestFriend;
+  window.respondToRequest = respondToRequest;
+  window.removeFriend = removeFriend;
+  window.receiveFriendshipData = receiveFriendshipData;
+  window.requestFriendshipData = requestFriendshipData;
+
   let preloadedState = {};
   if (window.currentUser) {
     preloadedState = {session: {currentUser: window.currentUser}};

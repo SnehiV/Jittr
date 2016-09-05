@@ -14,7 +14,11 @@ class Api::CheckInsController < ApplicationController
 
   def index
     if logged_in?
-      @checkIns = CheckIn.all
+      @checkIns = CheckIn.select('*').where('check_ins.user_id IN (
+        SELECT friend_id
+        FROM friendships
+        WHERE friendships.status = 2 AND friendships.friendable_id = ?)', current_user.id)
+        debugger
       render :index
     else
       render json: "Not logged in", status: 404

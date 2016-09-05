@@ -6,6 +6,7 @@ import CheckInFeed from './check_in_feed';
 class UserProfile extends React.Component{
   constructor(props){
     super(props);
+    
   }
 
   componentWillMount(){

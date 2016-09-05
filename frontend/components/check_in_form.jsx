@@ -12,7 +12,7 @@ class CheckInForm extends React.Component{
       username: this.props.session.currentUser.username,
       rating: 0
     };
-
+    
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
