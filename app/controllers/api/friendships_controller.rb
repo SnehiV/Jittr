@@ -25,7 +25,6 @@ class Api::FriendshipsController < ApplicationController
       current_user.decline_request(requested_friend)
 
     end
-
     render json: generate_friendships
   end
 

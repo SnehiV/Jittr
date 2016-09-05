@@ -48,3 +48,5 @@ Pamela.friend_request(Yeezy);
 Yeezy.accept_request(Pamela);
 
 Yeezy.friend_request(Priyanka);
+
+Priyanka.friend_request(Weezy);

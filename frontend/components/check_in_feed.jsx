@@ -5,13 +5,13 @@ class CheckInFeed extends React.Component{
   constructor(props){
     super(props);
   }
-
-  componentWillMount(){
-    if (this.props.fetchCheckIns){
-      this.props.fetchCheckIns();
-    }
-  }
-
+  // 
+  // componentWillMount(){
+  //   if (this.props.fetchCheckIns){
+  //     this.props.fetchCheckIns();
+  //   }
+  // }
+  //
 
   render(){
     let checkInItems = Object.keys(this.props.checkIns).reverse().map(checkInId => (

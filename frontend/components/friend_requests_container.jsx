@@ -1,26 +1,19 @@
 import { connect } from 'react-redux';
-import Index from './index';
-import {logout} from '../actions/session_actions';
-import {requestCheckIns, newCheckIn} from '../actions/checkIn_actions';
+import FriendRequests from './friend_requests';
 import { requestFriendshipData, respondToRequest } from '../actions/friendship_actions';
-
-
 
 const mapStatetoProps = state => ({
   session: state.session,
-  checkIns: state.checkIns,
   friendships: state.friendships
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleLogout: () => dispatch(logout()),
-  fetchCheckIns: () => dispatch(requestCheckIns()),
-  newCheckIn: (checkInParams) => dispatch(newCheckIn(checkInParams)),
   fetchFriendshipData: () => dispatch(requestFriendshipData()),
   requestResponse: (friendshipParams) => dispatch(respondToRequest(friendshipParams))
 });
 
+
 export default connect(
   mapStatetoProps,
   mapDispatchToProps
-)(Index);
+)(FriendRequests);

@@ -9,7 +9,6 @@ import { friendRequest, requestResponse, fetchFriendships,
 const FriendshipMiddleware = store => next => action => {
  let success = (friendshipData) => store.dispatch(receiveFriendshipData(friendshipData));
  let error = (errors) => store.dispatch(receiveErrors(errors));
-
  switch (action.type) {
    case FriendshipConstants.REQUEST_FRIEND:
      friendRequest(success, action.friendshipParams, error);

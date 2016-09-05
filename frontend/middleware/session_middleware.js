@@ -4,7 +4,6 @@ import { signUpUser, logInUser, logOutUser } from '../util/session_api_util';
 
 const SessionMiddleware = store => next => action => {
   let success;
-  // debugger
   let error = (errors) => store.dispatch(receiveErrors(errors.responseJSON));
   switch(action.type){
     case SessionConstants.SIGNUP:

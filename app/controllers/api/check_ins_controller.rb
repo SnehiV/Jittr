@@ -17,8 +17,9 @@ class Api::CheckInsController < ApplicationController
       @checkIns = CheckIn.select('*').where('check_ins.user_id IN (
         SELECT friend_id
         FROM friendships
-        WHERE friendships.status = 2 AND friendships.friendable_id = ?)', current_user.id)
-        debugger
+        WHERE friendships.status = 2 AND friendships.friendable_id = ?)
+            OR check_ins.user_id = ?', current_user.id, current_user.id)
+
       render :index
     else
       render json: "Not logged in", status: 404
