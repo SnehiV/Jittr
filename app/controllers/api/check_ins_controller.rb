@@ -1,4 +1,3 @@
-require 'byebug'
 class Api::CheckInsController < ApplicationController
 
   def create
