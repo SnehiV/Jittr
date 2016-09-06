@@ -53,13 +53,15 @@ a.logo {
   }
 
   .logo-buttons{
-    height: 33%;
+    height: 40%;
     display:
-    flex;width: 50%;
+    flex;
+    width: 50%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: initial;
     align-items: center;
-    color: moccasin;}
+    color: moccasin;
+    }
 
   .splash-link{
     font-size: 25px;
@@ -68,6 +70,18 @@ a.logo {
     text-decoration: none;
     color: moccasin;
   }
+
+  .logo-buttons > a {
+    height: 20%;
+    font-size: 25px;
+    font-weight: inherit;
+    font-family: sans-serif;
+  }
+
+.input-fields {
+    height: 15%;
+  }
+
   .login-fields {
     display: flex;
     justify-content: space-between;
@@ -86,7 +100,7 @@ a.logo {
     font-family: 'Calligraffitti';
     font: cursive;
     font-weight: bolder;
-    height: 50%;
+    height: 70%;
   }
 
   .splash-links {

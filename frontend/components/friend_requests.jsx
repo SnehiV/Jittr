@@ -23,18 +23,20 @@ class FriendRequests extends React.Component{
     let requestedFriends;
     let userRoute = `/users/${this.userId}`;
     if (this.props.friendships.requested_friends){
-        requestedFriends = this.props.friendships.requested_friends.map(requestFriend => {
+        requestedFriends = this.props.friendships.requested_friends.map((requestFriend, idx) => {
           let userId = requestFriend.id;
           let username = requestFriend.username;
 
           return (
-            <li>
+            <li key={idx}>
               <div>
                 <Link to={userRoute}>{username}</Link>
-                <button className="accept-request" onClick={this.handleRequestResponse(userId, 1)}>Accept
-                </button>
-                <button className="decline-request" onClick={this.handleRequestResponse(userId, 0)}>Decline
-                </button>
+                <div className="friend-requests-buttons">                  
+                  <button className="accept-request" onClick={this.handleRequestResponse(userId, 1)}>Accept
+                  </button>
+                  <button className="decline-request" onClick={this.handleRequestResponse(userId, 0)}>Decline
+                  </button>
+                </div>
               </div>
             </li>
           );

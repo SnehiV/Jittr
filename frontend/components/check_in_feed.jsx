@@ -14,9 +14,11 @@ class CheckInFeed extends React.Component{
   //
 
   render(){
-    let checkInItems = Object.keys(this.props.checkIns).reverse().map(checkInId => (
-        <li><CheckInItem checkIn={this.props.checkIns[checkInId]} /></li>
-      )
+    let checkInItems = Object.keys(this.props.checkIns).reverse().map(checkInId => {
+      return (
+        <li key={checkInId}><CheckInItem checkIn={this.props.checkIns[checkInId]} /></li>
+      );
+      }
     );
     return(
       <div className="checkIn-feed">

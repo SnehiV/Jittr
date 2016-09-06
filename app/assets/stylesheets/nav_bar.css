@@ -11,8 +11,8 @@
 
 .nav-list {
   display: flex;
-  justify-content: flex-end;
-  width: 50%;
+  justify-content: space-around;
+  width: 75%;
   align-items: center;
   font-size: larger;
   height: 100%;

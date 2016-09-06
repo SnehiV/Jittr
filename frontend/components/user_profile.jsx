@@ -6,7 +6,6 @@ import CheckInFeed from './check_in_feed';
 class UserProfile extends React.Component{
   constructor(props){
     super(props);
-
   }
 
   componentWillMount(){
@@ -26,11 +25,15 @@ class UserProfile extends React.Component{
   }
 
   render(){
+    let username;
+    if (Object.keys(this.props.checkIns).length > 0){
+      username = this.userCheckIns()[0].user.username;
+    }
     return (
       <div className='user=profile'>
         <div className='profile-container'>
           <span className='cover-photo'>
-            <h1 className='cover-username'>Username</h1>
+            <h1 className='cover-username'>{username}</h1>
           </span>
           <div className='profile-content'>
             <CheckInFeed checkIns={this.userCheckIns()}/>

@@ -50,13 +50,13 @@ class CheckInForm extends React.Component{
           <input
             className="checkIn-input"
             type="text"
-            placeholder="Drink"
+            placeholder="Drink..."
             value={this.state.drink_name}
             onChange={this.update('drink_name')} />
 
           <input
             className="checkIn-input"
-            placeholder="location"
+            placeholder="Location..."
             type="text"
             value={this.state.location}
             onChange={this.update('location')} />

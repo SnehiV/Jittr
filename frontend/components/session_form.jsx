@@ -48,11 +48,16 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const errors = this.props.session.errors.map(msg => (
-      <li>
-        {msg}
-      </li>
-    ));
+    let errors;
+    if (this.props.session.errors){
+      errors = this.props.session.errors.map(msg => (
+        <li>
+          {msg}
+        </li>
+      ));
+    } else {
+      errors = [<li></li>];
+    }
 
     return(
       <div className="splash-page">

@@ -6,11 +6,11 @@ export const Rating = ({rating}) => {
     let cup;
 
     if (i < rating) {
-      cup = <div className="toggled-cups">
+      cup = <div key={i} className="toggled-cups">
               <i className="fa fa-coffee" aria-hidden="true"></i>
             </div>;
     } else {
-      cup = <div className="untoggled-cups">
+      cup = <div key={i} className="untoggled-cups">
               <i className="fa fa-coffee" aria-hidden="true"></i>
             </div>;
     }

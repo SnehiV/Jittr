@@ -2,7 +2,9 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    background-color: moccasin;
+    background-color: white;
+    background-image: url('https://www.colourbox.com/preview/1753089-background-of-aromatic-roasted-brown-coffee-bean.jpg');
+    background-size: contain;
 }
 
 form.checkIn-form {
@@ -10,7 +12,7 @@ form.checkIn-form {
     flex-direction: column;
     align-items: center;
     border: 3px solid lightgray;
-    background-color: honeydew;
+    background-color: rgba(210, 105, 30, 0.3);
 }
 
 .checkIn-item {
@@ -26,6 +28,8 @@ form.checkIn-form {
     width: 40%;
     padding: 5px;
     border: 2px solid lightgray;
+    opacity: 1;
+    background-color: rgba(999, 999, 999, 0.7);
 }
 
 .nonCheckIn-content {
@@ -48,7 +52,7 @@ form.checkIn-form {
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
-  background-color: white;
+  background-color: rgba(999, 999, 999, 0.7);
 }
 
 .checkIn-form {
@@ -72,7 +76,7 @@ form.checkIn-form {
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: honeydew;
+    background-color: rgba(210, 105, 30, 0.5);
 }
 
 .rating-cups {
@@ -85,7 +89,11 @@ form.checkIn-form {
 .friend-requests {
     border: 1px solid lightgray;
     padding: 20px;
-    background-color: aliceblue;
+    display: flex;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgba(210, 105, 30, 0.5);
 }
 
 .checkIn-review > p {
@@ -102,17 +110,20 @@ form.checkIn-form {
     background-color: chocolate;
 }
 
-h3 {font-family: sans-serif;}
+h3 {font-family: sans-serif;color: white;text-decoration: underline;}
 
 .review-container > h4 {
     margin-bottom: 5px;
+    color: white;
 }
 
 .checkIn-item > h4 {
     margin-top: 0;
+    color: moccasin;
+    font-size: larger;
 }
 
-.checkIn-text > p > a {color: chocolate;}
+.checkIn-text > p > a {color: white;}
 .checkIn-text > p > a:hover {text-decoration: underline;}
 
 .toggled-cups {
@@ -125,4 +136,34 @@ h3 {font-family: sans-serif;}
 
 .rating-cups > span > div:hover {
   color: chocolate;
+}
+
+input.checkIn-input::-webkit-input-placeholder {
+    color: black;
+    opacity: 0.5;
+}
+
+textarea.checkIn-input::-webkit-input-placeholder {
+    color: black;
+    opacity: 0.5;
+}
+
+.request-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.request-list > li {
+    padding: 10px;
+    background-color: rgba(999, 999, 999, 0.7);
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.request-list > li > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
