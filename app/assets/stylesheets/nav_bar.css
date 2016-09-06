@@ -1,0 +1,31 @@
+.navbar {
+  position: relative;
+  min-height: 50px;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: chocolate;
+  color: moccasin;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  align-items: center;
+  font-size: larger;
+  height: 100%;
+}
+
+.nav-logo {
+  font-family: 'Calligraffitti';
+  font: cursive;
+  font-size: 48px;
+  font-weight: bold;
+  padding-left: 5%;
+}
+
+.nav-list > li {
+  padding-right: 20px;
+}

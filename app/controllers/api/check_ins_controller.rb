@@ -19,6 +19,17 @@ class Api::CheckInsController < ApplicationController
         WHERE friendships.status = 2 AND friendships.friendable_id = ?)
             OR check_ins.user_id = ?', current_user.id, current_user.id)
 
+      @checkIns.each do |checkIn|
+        hours_ago = ((Time.now - checkIn['created_at']) / 3600).floor
+        if hours_ago === 0
+          checkIn['created_at'] = 'less than an hour ago'
+        elsif hours_ago < 24
+          checkIn['created_at'] = hours_ago.floor
+        else
+          checkIn['created_at'] = checkIn['created_at'].strftime("%b %d %Y")
+        end
+      end
+
       render :index
     else
       render json: "Not logged in", status: 404

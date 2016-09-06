@@ -15,12 +15,12 @@ class App extends React.Component{
     }
 
     return(
-      <div>
-        <nav>
-          <h1><Link to="/home" className="nav-logo">Jittr</Link></h1>
+      <div className="app-container">
+        <nav className="navbar">
+          <h1 className="nav-logo"><Link to="/home" className="nav-logo-link">Jittr</Link></h1>
 
           <ul className="nav-list">
-            <li><Link to="/home" />Recent Activity</li>
+            <li><Link to="/home">Recent Activity</Link></li>
             {currentUserProfileLink}
             <li><a onClick={this.props.handleLogout}>Logout</a></li>
           </ul>

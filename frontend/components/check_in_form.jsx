@@ -44,34 +44,37 @@ class CheckInForm extends React.Component{
     // ));
           // <ul className='errors'>{errors}</ul>
     return(
-      <form className="checkIn-form" onSubmit={this.handleSubmit()}>
-        <input
-          className="checkIn-input"
-          type="text"
-          placeholder="Drink"
-          value={this.state.drink_name}
-          onChange={this.update('drink_name')} />
+      <div className="checkIn-form">
+        <h3>Check In</h3>
+        <form className="checkIn-form" onSubmit={this.handleSubmit()}>
+          <input
+            className="checkIn-input"
+            type="text"
+            placeholder="Drink"
+            value={this.state.drink_name}
+            onChange={this.update('drink_name')} />
 
-        <input
-          className="checkIn-input"
-          placeholder="location"
-          type="text"
-          value={this.state.location}
-          onChange={this.update('location')} />
+          <input
+            className="checkIn-input"
+            placeholder="location"
+            type="text"
+            value={this.state.location}
+            onChange={this.update('location')} />
 
-        <textarea
+          <textarea
             className="checkIn-input"
             placeholder="Review..."
             value={this.state.review}
             onChange={this.update('review')} />
 
-        <HoverRater handleHoverClick={this.handleHoverClick.bind(this)} />
+          <HoverRater handleHoverClick={this.handleHoverClick.bind(this)} />
 
-        <input type="hidden" value={this.props.session.currentUser.id} />
+          <input type="hidden" value={this.props.session.currentUser.id} />
 
-        <button className="check-in-button">Check In</button>
+          <button className="check-in-button">Check In</button>
 
-      </form>
+        </form>
+      </div>
     );
   }
 }

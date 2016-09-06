@@ -23,11 +23,3 @@ footer, small {
 ul {
   list-style: none;
 }
-
-/* Clearfix */
-
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}

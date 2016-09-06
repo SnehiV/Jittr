@@ -1,0 +1,128 @@
+.index-content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: moccasin;
+}
+
+form.checkIn-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid lightgray;
+    background-color: honeydew;
+}
+
+.checkIn-item {
+    width: 100%;
+    padding: 5%;
+    margin: 0;
+    border: 3px solid lightgray;
+}
+
+.checkIn-input {
+    margin: 20px 7px 7px 7px;
+    font-size: 15px;
+    width: 40%;
+    padding: 5px;
+    border: 2px solid lightgray;
+}
+
+.nonCheckIn-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 33%;
+    align-items: center;
+}
+
+.checkIn-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.checkIn-review {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  background-color: white;
+}
+
+.checkIn-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.checkIn-feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.checkIn-feed > li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: honeydew;
+}
+
+.rating-cups {
+    display: flex;
+    padding: 5px 10px 10px 10px;
+    font-size: xx-large;
+}
+
+
+.friend-requests {
+    border: 1px solid lightgray;
+    padding: 20px;
+    background-color: aliceblue;
+}
+
+.checkIn-review > p {
+    padding: 10px 10px 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.check-in-button {
+    font-size: 15px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    color: moccasin;
+    background-color: chocolate;
+}
+
+h3 {font-family: sans-serif;}
+
+.review-container > h4 {
+    margin-bottom: 5px;
+}
+
+.checkIn-item > h4 {
+    margin-top: 0;
+}
+
+.checkIn-text > p > a {color: chocolate;}
+.checkIn-text > p > a:hover {text-decoration: underline;}
+
+.toggled-cups {
+  color: chocolate;
+}
+
+.untoggled-cups {
+  color: lightgrey;
+}
+
+.rating-cups > span > div:hover {
+  color: chocolate;
+}

@@ -1,0 +1,34 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: moccasin;
+}
+
+.cover-photo {
+  background-image: url('https://hd.unsplash.com/photo-1447347974530-d7c185559683');
+  background-position: 75% 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1044px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 300px;
+  z-index: 0;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.cover-username {
+    font-size: 75px;
+    color: honeydew;
+    font-weight: 400;
+    font-family: 'Calligraffitti';
+    text-align: center;
+}

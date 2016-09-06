@@ -27,11 +27,13 @@ class CheckInItem extends React.Component{
             <p><Link to={userRoute}>{this.username}</Link> is sipping on a {this.drinkName} at {this.location}</p>
           </div>
         </h4>
-        <div className="checkIn-content">
-          <p>{this.review}</p>
-          <Rating rating={this.rating} />
+        <div className="review-container">
+          <h4>Review:</h4>
+          <div className="checkIn-review">
+            <p>{this.review}</p>
+            <Rating rating={this.rating} />
+          </div>
         </div>
-
       </div>
     );
   }

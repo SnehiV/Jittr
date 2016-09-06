@@ -5,7 +5,7 @@ class CheckInFeed extends React.Component{
   constructor(props){
     super(props);
   }
-  // 
+  //
   // componentWillMount(){
   //   if (this.props.fetchCheckIns){
   //     this.props.fetchCheckIns();
@@ -19,9 +19,12 @@ class CheckInFeed extends React.Component{
       )
     );
     return(
-      <ul>
-        {checkInItems}
-      </ul>
+      <div className="checkIn-feed">
+        <h3>Recent Activity</h3>
+        <ul className="checkIn-feed">
+          {checkInItems}
+        </ul>
+      </div>
     );
   }
 }
