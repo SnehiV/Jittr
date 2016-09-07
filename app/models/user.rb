@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     class_name: :CheckIn
 
+  has_many :drinks, through: :check_ins
+
   has_friendship
 
   has_many :comments

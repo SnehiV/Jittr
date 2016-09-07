@@ -5,7 +5,7 @@ export const SessionConstants = {
   LOGOUT: "LOGOUT",
   SIGNUP: "SIGNUP",
   RECEIVE_CURRENT_USER: "RECEIVE_CURRENT_USER",
-  RECEIVE_ERRORS: "RECEIVE_ERRORS"
+  RECEIVE_ERRORS: "RECEIVE_ERRORS",
 };
 
 export const login = (userParams) => ({

@@ -1,10 +1,8 @@
 import {CheckInConstants, newCheckIn,
         updateCheckIn, deleteCheckIn,
         requestCheckIns, receiveCheckIns,
-        receiveCheckIn,
+        receiveCheckIn, receiveErrors,
         deleteCheckInFromState} from '../actions/checkIn_actions';
-
-import {receiveErrors} from '../actions/session_actions';
 
 import {createCheckIn, editCheckIn,
         fetchCheckIns, destroyCheckIn} from '../util/checkIn_api_util';

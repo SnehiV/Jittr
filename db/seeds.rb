@@ -15,7 +15,7 @@ User.create!(username: "Guest", password: "password")
 
 
 CheckIn.create!(user_id: 1, drink_name: "Cappciuno", rating: 4, review: "good", location:"Specialty's", smiles: 2, username: 'Yeezy')
-CheckIn.create!(user_id: 2, drink_name: "Flat White", rating: 2, review: "aight", location:"Starbucks", smiles: 0, username: 'Travy')
+CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 1, rating: 2, review: "aight", location:"Starbucks", smiles: 0, username: 'Travy')
 CheckIn.create!(user_id: 1, drink_name: "Americano", rating: 5, review: "really fucking good", location:"Octane", smiles: 4, username: 'Yeezy')
 CheckIn.create!(user_id: 2, drink_name: "Flat White", rating: 1, review: "tasted like milk", location:"Caribou", smiles: 4, username: 'Travy')
 CheckIn.create!(user_id: 3, drink_name: "Regular Black", rating: 3, review: "not bad", location:"Caribou", smiles: 1, username: 'Weezy')
@@ -27,7 +27,7 @@ CheckIn.create!(user_id: 7, drink_name: "Cappaciuno", rating: 5, review: "delici
 CheckIn.create!(user_id: 7, drink_name: "Cubano", rating: 4, review: "Just what I needed", location:"Dancing Goats", smiles: 4, username: 'Guest')
 CheckIn.create!(user_id: 7, drink_name: "Doppio", rating: 2, review: "The barista needs some practice", location:"Octnae", smiles: 4, username: 'Guest')
 
-
+Drink.create!(name: "Flat White", brew_style: "Coffee", description: "something", check_in_id: 2)
 
 
 Yeezy = User.find(1)
