@@ -24,18 +24,27 @@ class CheckInForm extends React.Component{
   handleSubmit(){
     return (e) => {
       e.preventDefault();
-      const checkInParams = {checkIn: this.state};
+
+      const checkInParams = {checkIn: {
+        drink_name: this.state.drink_name,
+        location: this.state.location,
+        review: this.state.review,
+        user_id: this.state.user_id,
+        username: this.state.username,
+        rating: this.state.initialRating
+      }};
+
       this.props.newCheckIn(checkInParams);
       this.setState({drink_name: "", location: "", review: ""});
     };
   }
 
   updateRating(rating){
-      this.setState({rating: rating});
+        this.setState({rating: rating});
   }
 
-  updateInitial(rating){
-      this.setState({initialRating: rating});
+  updateInitial(initialRating){
+        this.setState({initialRating: initialRating});
   }
 
 
@@ -81,8 +90,8 @@ class CheckInForm extends React.Component{
             <Rating initialRate={this.state.initialRating}
               empty={greyCup} full={colorCup}
               placeholder={colorCup}
-              onChange={this.updateRating()}
-              onClick={this.updateInitial()}/>
+              onChange={this.updateRating.bind(this)}
+              onClick={this.updateInitial.bind(this)}/>
           </div>
 
           <input type="hidden" value={this.props.session.currentUser.id} />
