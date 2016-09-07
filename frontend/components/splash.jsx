@@ -7,15 +7,6 @@ class Splash extends React.Component{
     super(props);
   }
 
-  handleGuestLogin(){
-    return (e) => {
-      e.preventDefault();
-      let userParams = {user: {username: "Guest", password: "password"}};
-      this.props.handleLogin(userParams);
-      this.props.router.replace('/home');
-    };
-  }
-
   // const handleLogin = () => {
   //   router.push('/login');
   // };
@@ -35,7 +26,6 @@ class Splash extends React.Component{
               <Link to="/login" className="splash-link">Login</Link>
               <Link to="/signup" className="splash-link">Sign Up</Link>
             </div>
-            <a onClick={this.handleGuestLogin()}>Demo Login</a>
           </div>
           {this.props.children}
         </div>

@@ -9,17 +9,21 @@
   color: moccasin;
 }
 
-a.logo {
-    height: inherit;
-}
 
 .sessionForm {
      display: flex;
-     width: 50%;
-     justify-content: center;
+     width: 100%;
      flex-direction: column;
      height: 50%;
      align-items: center;
+ }
+
+ .demo-login {
+     height: 0;
+     font-size: x-large;
+     color: moccasin;
+     font-weight: inherit;
+     font-size: xx-large;
  }
 
  .input1 {padding: 10px;margin: 0 5px 0 5px;}
@@ -39,9 +43,10 @@ a.logo {
  }
 
  .splash-page{
-    background-image: url("https://hd.unsplash.com/photo-1428550443830-190057dc8098");
+    background-image: url("https://hd.unsplash.com/photo-1426174840074-541ae41efdb9");
     background-position: center center;
     position: absolute;
+    background-size: cover;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,7 +61,7 @@ a.logo {
     height: 40%;
     display:
     flex;
-    width: 50%;
+    width: 100%;
     flex-direction: column;
     justify-content: initial;
     align-items: center;

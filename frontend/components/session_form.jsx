@@ -47,6 +47,14 @@ class SessionForm extends React.Component {
     };
   }
 
+  handleGuestLogin(){
+    return (e) => {
+      e.preventDefault();
+      let userParams = {user: {username: "Guest", password: "password"}};
+      this.props.handleLogin(userParams);
+    };
+  }
+
   render() {
     let errors;
     if (this.props.session.errors){
@@ -82,6 +90,7 @@ class SessionForm extends React.Component {
               <button className="button1">Submit</button>
             </div>
             <ul className="splash-errors">{errors}</ul>
+            <a className="demo-login" onClick={this.handleGuestLogin()}>Demo Login</a>
         </form>
       </div>
     );

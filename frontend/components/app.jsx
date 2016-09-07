@@ -22,6 +22,7 @@ class App extends React.Component{
           <ul className="nav-list">
             <li><Link to="/home">Recent Activity</Link></li>
             {currentUserProfileLink}
+            <li><Link to="/friends">Friends</Link></li>
             <li><a onClick={this.props.handleLogout}>Logout</a></li>
           </ul>
         </nav>

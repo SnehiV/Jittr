@@ -1,5 +1,5 @@
 import React from 'react';
-import {HoverRater} from './hover_rater';
+import Rating from 'react-rating';
 
 class CheckInForm extends React.Component{
   constructor(props){
@@ -10,7 +10,8 @@ class CheckInForm extends React.Component{
       review: "",
       user_id: this.props.session.currentUser.id,
       username: this.props.session.currentUser.username,
-      rating: 0
+      rating: 0,
+      initialRating: 0
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,14 +30,22 @@ class CheckInForm extends React.Component{
     };
   }
 
-  handleHoverClick(rating){
-    return (e) => {
+  updateRating(rating){
       this.setState({rating: rating});
-    };
+  }
+
+  updateInitial(rating){
+      this.setState({initialRating: rating});
   }
 
 
   render() {
+    let greyCup = <div className="untoggled-cups">
+                    <i className="fa fa-coffee" aria-hidden="true"></i>
+                  </div>;
+    let colorCup = <div className="toggled-cups">
+                    <i className="fa fa-coffee" aria-hidden="true"></i>
+                   </div>;
     // const errors = this.props.session.errors.map(msg => (
     //   <li>
     //     {msg}
@@ -67,7 +76,14 @@ class CheckInForm extends React.Component{
             value={this.state.review}
             onChange={this.update('review')} />
 
-          <HoverRater handleHoverClick={this.handleHoverClick.bind(this)} />
+          <div className="hover-rater">
+            <h4>Rating:</h4>
+            <Rating initialRate={this.state.initialRating}
+              empty={greyCup} full={colorCup}
+              placeholder={colorCup}
+              onChange={this.updateRating()}
+              onClick={this.updateInitial()}/>
+          </div>
 
           <input type="hidden" value={this.props.session.currentUser.id} />
 

@@ -30,7 +30,7 @@ class UserProfile extends React.Component{
       username = this.userCheckIns()[0].user.username;
     }
     return (
-      <div className='user=profile'>
+      <div className='user-profile'>
         <div className='profile-container'>
           <span className='cover-photo'>
             <h1 className='cover-username'>{username}</h1>

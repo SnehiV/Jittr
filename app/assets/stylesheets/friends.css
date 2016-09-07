@@ -1,0 +1,33 @@
+.friends-list-container {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.friends-list {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+    font-size: larger;
+    border: 2px solid lightgray;
+    margin-top: 100px;
+}
+
+.friend {
+    margin: 20px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+}
+
+.friend {
+    margin: 20px;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.friend-requests-container {margin-top: 100px;}

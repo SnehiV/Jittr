@@ -2,10 +2,11 @@ import React from 'react';
 import SessionContainer from './session_container';
 import IndexContainer from './index_container';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import SplashContainer from './splash_container';
+import Splash from './splash_container';
 import CheckInItem from './check_in_item';
 import UserContainer from './user_profile_container';
 import AppContainer from './app_container';
+import FriendsContainer from './friends-container';
 
 
 class AppRouter extends React.Component{
@@ -33,11 +34,12 @@ class AppRouter extends React.Component{
     return (
       <Router history={hashHistory}>
         <Route path="/" component={AppContainer}>
-          <IndexRoute component={SplashContainer} />
+          <IndexRoute component={Splash} />
           <Route path="signup" component={SessionContainer} onEnter={this._redirectIfLoggedIn} />
           <Route path="login" component={SessionContainer} onEnter={this._redirectIfLoggedIn}/>
           <Route path="home" component={IndexContainer} onEnter={this._ensureLoggedIn}/>
           <Route path="users/:id" component={UserContainer} onEnter={this._ensureLoggedIn} />
+          <Route path="friends" component={FriendsContainer} onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
     );

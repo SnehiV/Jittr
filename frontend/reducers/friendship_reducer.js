@@ -1,7 +1,8 @@
 import { FriendshipConstants } from '../actions/friendship_actions';
 import merge from 'lodash/merge';
 
-const FriendshipReducer = (state = {error: []}, action) =>  {
+const defaultState = {friends: [], pending_friends: [], requested_friends: [], errors: []};
+const FriendshipReducer = (state = defaultState, action) =>  {
   let newState;
   switch (action.type) {
     case FriendshipConstants.RECEIVE_FRIENDSHIP_DATA:

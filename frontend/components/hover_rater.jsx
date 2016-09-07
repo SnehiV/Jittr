@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from 'react-rating';
 
 export const HoverRater = ({handleHoverClick}) => {
   let coffeeCupRatings = [];

@@ -1,8 +1,8 @@
-.index-content {
+.content {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    background-color: white;
+    background-color: black;
     background-image: url('https://www.colourbox.com/preview/1753089-background-of-aromatic-roasted-brown-coffee-bean.jpg');
     background-size: contain;
 }
@@ -12,7 +12,7 @@ form.checkIn-form {
     flex-direction: column;
     align-items: center;
     border: 3px solid lightgray;
-    background-color: rgba(210, 105, 30, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .checkIn-item {
@@ -76,7 +76,7 @@ form.checkIn-form {
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgba(210, 105, 30, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .rating-cups {
@@ -93,8 +93,13 @@ form.checkIn-form {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    background-color: rgba(210, 105, 30, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: large;
+    text-align: center;
+    font-weight: bold;
 }
+
 
 .checkIn-review > p {
     padding: 10px 10px 10px 20px;
@@ -124,18 +129,18 @@ h3 {font-family: sans-serif;color: white;text-decoration: underline;}
 }
 
 .checkIn-text > p > a {color: white;}
-.checkIn-text > p > a:hover {text-decoration: underline;}
+.checkIn-text > p > a:hover {text-decoration: underline; color: chocolate}
 
 .toggled-cups {
   color: chocolate;
+  padding: 5px;
+  font-size: xx-large;
 }
 
 .untoggled-cups {
   color: lightgrey;
-}
-
-.rating-cups > span > div:hover {
-  color: chocolate;
+  padding: 5px;
+  font-size: xx-large;
 }
 
 input.checkIn-input::-webkit-input-placeholder {
@@ -167,3 +172,12 @@ textarea.checkIn-input::-webkit-input-placeholder {
     justify-content: space-between;
     align-items: center;
 }
+
+.hover-rater {
+    color: white;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hover-rater > h4 {margin: 20px 7px 7px 7px;}
