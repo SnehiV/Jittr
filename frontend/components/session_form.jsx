@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
             <div className="submit-button">
               <button className="button1">Submit</button>
             </div>
-            <ul className="splash-errors">{errors}</ul>
+            <ul className="errors">{errors}</ul>
             <a className="demo-login" onClick={this.handleGuestLogin()}>Demo Login</a>
         </form>
       </div>

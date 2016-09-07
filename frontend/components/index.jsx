@@ -28,8 +28,11 @@ class Index extends React.Component{
     return(
       <div className="content">
         <div className="checkIn-content">
-          <CheckInForm session={this.props.session} newCheckIn={this.props.newCheckIn} />
-          <CheckInFeed checkIns={this.props.checkIns} fetchCheckIns={this.props.fetchCheckIns} />
+          <CheckInForm session={this.props.session}
+            newCheckIn={this.props.newCheckIn}
+            errors={this.props.errors} />
+          <CheckInFeed checkIns={this.props.checkIns}
+            fetchCheckIns={this.props.fetchCheckIns} />
         </div>
         <div className="nonCheckIn-content">
           <FriendRequestContainer />

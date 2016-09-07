@@ -8,8 +8,9 @@ import { requestFriendshipData, respondToRequest } from '../actions/friendship_a
 
 const mapStatetoProps = state => ({
   session: state.session,
-  checkIns: state.checkIns,
-  friendships: state.friendships
+  checkIns: state.checkIns.checkIns,
+  friendships: state.friendships,
+  errors: state.checkIns.errors
 });
 
 const mapDispatchToProps = dispatch => ({

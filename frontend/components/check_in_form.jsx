@@ -55,12 +55,11 @@ class CheckInForm extends React.Component{
     let colorCup = <div className="toggled-cups">
                     <i className="fa fa-coffee" aria-hidden="true"></i>
                    </div>;
-    // const errors = this.props.session.errors.map(msg => (
-    //   <li>
-    //     {msg}
-    //   </li>
-    // ));
-          // <ul className='errors'>{errors}</ul>
+    const errors = this.props.errors.map(msg => (
+      <li key={msg}>
+        {msg}
+      </li>
+    ));
     return(
       <div className="checkIn-form">
         <h3>Check In</h3>
@@ -97,6 +96,8 @@ class CheckInForm extends React.Component{
           <input type="hidden" value={this.props.session.currentUser.id} />
 
           <button className="check-in-button">Check In</button>
+
+          <ul className='errors'>{errors}</ul>
 
         </form>
       </div>
