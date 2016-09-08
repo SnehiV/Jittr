@@ -11,7 +11,6 @@ import {createCheckIn, editCheckIn,
 export const CheckInMiddleware = store => next => action => {
   let success;
   let error = errors => store.dispatch(receiveErrors(errors.responseJSON));
-
   switch(action.type){
     case CheckInConstants.CREATE_CHECK_IN:
       success = checkIn => store.dispatch(receiveCheckIn(checkIn));
@@ -22,8 +21,8 @@ export const CheckInMiddleware = store => next => action => {
       editCheckIn(success, action.checkInParams, error);
       break;
     case CheckInConstants.REQUEST_CHECK_INS:
-      success = checkIns => store.dispatch(receiveCheckIn(checkIns));
-      fetchCheckIns(success, error);
+      success = checkIns => store.dispatch(receiveCheckIns(checkIns));
+      fetchCheckIns(success, action.checkInParams, error);
       break;
     case CheckInConstants.DELETE_CHECK_IN:
       success = deletedCheckIn => store.dispatch(deleteCheckInFromState(deletedCheckIn));

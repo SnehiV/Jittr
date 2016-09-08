@@ -18,7 +18,8 @@ class Index extends React.Component{
   // }
 
   componentWillMount(){
-    this.props.fetchCheckIns();
+    let checkInParams = {checkIn: {filter: true}};
+    this.props.fetchCheckIns(checkInParams);
     this.props.fetchFriendshipData();
   }
 

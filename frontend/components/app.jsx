@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router';
+import SearchContainer from './search_container';
 
 class App extends React.Component{
   constructor(props){
@@ -23,6 +24,7 @@ class App extends React.Component{
             <li><Link to="/home">Recent Activity</Link></li>
             {currentUserProfileLink}
             <li><Link to="/friends">Friends</Link></li>
+            <li><SearchContainer /></li>
             <li><a onClick={this.props.handleLogout}>Logout</a></li>
           </ul>
         </nav>

@@ -31,8 +31,9 @@ export const deleteCheckInFromState = (deletedCheckIn) => ({
   deletedCheckIn
 });
 
-export const requestCheckIns = () => ({
-  type: CheckInConstants.REQUEST_CHECK_INS
+export const requestCheckIns = (checkInParams) => ({
+  type: CheckInConstants.REQUEST_CHECK_INS,
+  checkInParams
 });
 
 export const receiveCheckIn = (checkIn) => ({

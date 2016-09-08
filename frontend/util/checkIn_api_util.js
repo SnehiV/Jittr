@@ -8,10 +8,11 @@ export const createCheckIn = (success, checkInParams, error) => {
   });
 };
 
-export const fetchCheckIns = (success, error) => {
+export const fetchCheckIns = (success, checkInParams, error) => {
   $.ajax({
     url: 'api/check_ins',
     type: 'GET',
+    data: checkInParams,
     success: success,
     error: error
   });

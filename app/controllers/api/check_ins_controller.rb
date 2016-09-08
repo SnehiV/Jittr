@@ -4,6 +4,7 @@ class Api::CheckInsController < ApplicationController
     @checkIn = CheckIn.new(check_in_params)
 
     if @checkIn.save
+      @user = @checkIn.user
       render :show
     else
       render json: @checkIn.errors.full_messages, status: 422
@@ -12,28 +13,20 @@ class Api::CheckInsController < ApplicationController
   end
 
   def index
-    if logged_in?
+    if check_in_params[:filter] == "true"
       @checkIns = CheckIn.select('*').where('check_ins.user_id IN (
         SELECT friend_id
         FROM friendships
         WHERE friendships.status = 2 AND friendships.friendable_id = ?)
             OR check_ins.user_id = ?', current_user.id, current_user.id)
 
-      @checkIns.each do |checkIn|
-        hours_ago = ((Time.now - checkIn['created_at']) / 3600).floor
-        if hours_ago === 0
-          checkIn['created_at'] = 'less than an hour ago'
-        elsif hours_ago < 24
-          checkIn['created_at'] = hours_ago.floor
-        else
-          checkIn['created_at'] = checkIn['created_at'].strftime("%b %d %Y")
-        end
-      end
-
-      render :index
+    elsif check_in_params[:filter] == "false"
+      @checkIns = CheckIn.all
     else
-      render json: "Not logged in", status: 404
+      render json: "Unavailble", status: 404
     end
+
+    render :index
   end
 
 
@@ -58,6 +51,6 @@ class Api::CheckInsController < ApplicationController
 
   def check_in_params
     params.require(:checkIn).permit(:id, :user_id, :drink_id, :drink_name,
-      :rating, :review, :location_id, :location, :smiles, :username)
+      :rating, :review, :location_id, :location, :smiles, :username, :filter)
   end
 end

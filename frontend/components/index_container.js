@@ -15,7 +15,7 @@ const mapStatetoProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleLogout: () => dispatch(logout()),
-  fetchCheckIns: () => dispatch(requestCheckIns()),
+  fetchCheckIns: (checkInParams) => dispatch(requestCheckIns(checkInParams)),
   newCheckIn: (checkInParams) => dispatch(newCheckIn(checkInParams)),
   fetchFriendshipData: () => dispatch(requestFriendshipData()),
   requestResponse: (friendshipParams) => dispatch(respondToRequest(friendshipParams))
