@@ -19,12 +19,11 @@ class App extends React.Component{
       <div className="app-container">
         <nav className="navbar">
           <h1 className="nav-logo"><Link to="/home" className="nav-logo-link">Jittr</Link></h1>
-
+          <section className="search-bar"><SearchContainer /></section>
           <ul className="nav-list">
             <li><Link to="/home">Recent Activity</Link></li>
             {currentUserProfileLink}
             <li><Link to="/friends">Friends</Link></li>
-            <li><SearchContainer /></li>
             <li><a onClick={this.props.handleLogout}>Logout</a></li>
           </ul>
         </nav>

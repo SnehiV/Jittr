@@ -32,3 +32,10 @@
     font-family: 'Calligraffitti';
     text-align: center;
 }
+
+.profile-content-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 30px;
+}

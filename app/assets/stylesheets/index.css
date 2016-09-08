@@ -1,28 +1,26 @@
 .content {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-    background-color: moccasin;
+    background-color: oldlace;
     background-size: contain;
+    padding: 30px;
+    align-items: flex-start;
 }
 
 form.checkIn-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid lightgray;
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .checkIn-item {
     width: 100%;
-    padding: 5%;
     margin: 0;
-    border: 3px solid lightgray;
+    color: black;
 }
 
 .checkIn-input {
-    margin: 20px 7px 7px 7px;
+    margin: 10px 7px 7px 7px;
     font-size: 15px;
     width: 40%;
     padding: 5px;
@@ -34,9 +32,10 @@ form.checkIn-form {
 .nonCheckIn-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 33%;
     align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    padding: 30px;
 }
 
 .checkIn-content {
@@ -45,6 +44,8 @@ form.checkIn-form {
     justify-content: center;
     align-items: center;
     width: 50%;
+    padding: 30px;
+    background color: w;
 }
 
 .checkIn-review {
@@ -58,24 +59,23 @@ form.checkIn-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     margin-bottom: 5px;
+    background-color: white;
+    padding: 20px;
 }
 
 .checkIn-feed {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    background-color: white;
 }
 
 .checkIn-feed > li {
-    width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-bottom: solid 1px lightgrey;
 }
 
 .rating-cups {
@@ -86,19 +86,15 @@ form.checkIn-form {
 
 
 .friend-requests {
-    border: 1px solid lightgray;
-    padding: 20px;
     display: flex;
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-size: large;
     text-align: center;
     font-weight: bold;
 }
-
 
 .checkIn-review > p {
     padding: 10px 10px 10px 20px;
@@ -109,12 +105,11 @@ form.checkIn-form {
 .check-in-button {
     font-size: 15px;
     border-radius: 10%;
-    margin-bottom: 20px;
     color: moccasin;
     background-color: chocolate;
 }
 
-h3 {font-family: sans-serif;color: white;text-decoration: underline;}
+h3 {font-family: sans-serif;color: black;padding: 0 0 10px 0;margin: 0;border-bottom: 1px solid lightgray;}
 
 .review-container > h4 {
     margin-bottom: 5px;
@@ -123,12 +118,12 @@ h3 {font-family: sans-serif;color: white;text-decoration: underline;}
 
 .checkIn-item > h4 {
     margin-top: 0;
-    color: moccasin;
+    color: black;
     font-size: larger;
 }
 
-.checkIn-text > p > a {color: white;}
-.checkIn-text > p > a:hover {text-decoration: underline; color: chocolate}
+.checkIn-text > p > a {color: chocolate;}
+.checkIn-text > p > a:hover {color: coral; }
 
 .toggled-cups {
   color: chocolate;
@@ -152,18 +147,21 @@ textarea.checkIn-input::-webkit-input-placeholder {
     opacity: 0.5;
 }
 
+
 .request-list {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    justify-content: center;
+    color: chocolate;
 }
 
 .request-list > li {
-    padding: 10px;
-    background-color: rgba(999, 999, 999, 0.7);
-    margin-top: 10px;
+    padding: 20px;
     font-family: sans-serif;
     font-weight: bold;
+    border-bottom: 1px solid lightgray;
 }
 
 .request-list > li > div {
@@ -173,10 +171,24 @@ textarea.checkIn-input::-webkit-input-placeholder {
 }
 
 .hover-rater {
-    color: white;
-    font-size: large;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.hover-rater > h4 {margin: 20px 7px 7px 7px;}
+.hover-rater > h4 {margin: 10px 7px 7px 7px;font-weight: 500;font-family: sans-serif;color: rgba(128, 128, 128, 0.8);}
+
+
+.checkIn-form-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.checkIn-feed-container {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+}

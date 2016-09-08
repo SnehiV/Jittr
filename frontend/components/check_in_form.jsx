@@ -61,7 +61,7 @@ class CheckInForm extends React.Component{
       </li>
     ));
     return(
-      <div className="checkIn-form">
+      <div className="checkIn-form-container">
         <h3>Check In</h3>
         <form className="checkIn-form" onSubmit={this.handleSubmit()}>
           <input

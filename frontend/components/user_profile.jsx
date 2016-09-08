@@ -83,11 +83,13 @@ class UserProfile extends React.Component{
             <h1 className='cover-username'>{this.state.username}</h1>
             {this.addFriendButton()}
           </span>
-          <div className='profile-content'>
-            {this.state.userCheckIns[0] ? this.state.userCheckIns[0].user_id : ""}
-            <CheckInFeed checkIns={this.state.userCheckIns} />
+          <div className="profile-content-container">            
+            <div className='profile-content'>
+              {this.state.userCheckIns[0] ? this.state.userCheckIns[0].user_id : ""}
+              <CheckInFeed checkIns={this.state.userCheckIns} />
+            </div>
+            {this.currentUserFriendRequests()}
           </div>
-          {this.currentUserFriendRequests()}
         </div>
 
       </div>

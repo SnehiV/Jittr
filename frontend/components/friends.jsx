@@ -46,11 +46,16 @@ class Friends extends React.Component{
 
   render(){
     return(
-      <div className="friends-list-container">
-        <ul className="friends-list">
-          {this.generateFriendLinks()}
-        </ul>
-        <FriendRequestContainer />
+      <div className='friends-content'>
+        <div className="friends-list-container">
+          <h2>Friends</h2>
+          <ul className="friends-list">
+            {this.generateFriendLinks()}
+          </ul>
+        </div>
+        <div className="friend-container">
+          <FriendRequestContainer />
+        </div>
       </div>
     );
   }

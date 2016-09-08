@@ -9,6 +9,10 @@ class FriendRequests extends React.Component{
     this.handleRequestResponse = this.handleRequestResponse.bind(this);
   }
 
+  componentWillMount(){
+    this.props.fetchFriendshipData();
+  }
+
 
   handleRequestResponse(userId, response){
     return e => {
@@ -31,10 +35,10 @@ class FriendRequests extends React.Component{
             <li key={idx}>
               <div>
                 <Link to={userRoute}>{username}</Link>
-                <div className="friend-requests-buttons">                  
-                  <button className="accept-request" onClick={this.handleRequestResponse(userId, 1)}>Accept
+                <div className="friend-requests-buttons">
+                  <button className="request-button" onClick={this.handleRequestResponse(userId, 1)}>Accept
                   </button>
-                  <button className="decline-request" onClick={this.handleRequestResponse(userId, 0)}>Decline
+                  <button className="request-button" onClick={this.handleRequestResponse(userId, 0)}>Decline
                   </button>
                 </div>
               </div>
