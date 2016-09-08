@@ -1,21 +1,19 @@
 import { connect } from 'react-redux';
-import UserProfile from './user_profile';
+import DrinkProfile from './drink_profile';
 import { requestCheckIns } from '../actions/checkIn_actions';
-import { requestFriend } from '../actions/friendship_actions';
 import { requestUsers } from '../actions/user_actions';
-
+import { requestDrinks } from '../actions/drink_actions';
 
 const mapStatetoProps = state => ({
+  drinks: state.drinks.drinks,
   checkIns: state.checkIns.checkIns,
-  currentUser: state.session.currentUser,
-  friendships: state.friendships,
   users: state.users
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchCheckIns: (checkInParams) => dispatch(requestCheckIns(checkInParams)),
-  friendRequest: (friendshipParams) => dispatch(requestFriend(friendshipParams)),
-  fetchUsers: () => dispatch(requestUsers())
+  fetchUsers: () => dispatch(requestUsers()),
+  fetchDrinks: () => dispatch(requestDrinks())
 });
 
 
@@ -23,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStatetoProps,
   mapDispatchToProps
-)(UserProfile);
+)(DrinkProfile);

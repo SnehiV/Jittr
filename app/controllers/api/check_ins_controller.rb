@@ -13,15 +13,17 @@ class Api::CheckInsController < ApplicationController
   end
 
   def index
-    if check_in_params[:filter] == "true"
+    if check_in_params[:filter] == "friends"
       @checkIns = CheckIn.select('*').where('check_ins.user_id IN (
         SELECT friend_id
         FROM friendships
         WHERE friendships.status = 2 AND friendships.friendable_id = ?)
             OR check_ins.user_id = ?', current_user.id, current_user.id)
 
-    elsif check_in_params[:filter] == "false"
+    elsif check_in_params[:filter] == "all"
       @checkIns = CheckIn.all
+    elsif check_in_params[:filter] == "user"
+      @checkIns = CheckIn.select('*').where('check_ins.user_id = ?', check_in_params[:id])
     else
       render json: "Unavailble", status: 404
     end

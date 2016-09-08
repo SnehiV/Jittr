@@ -5,13 +5,11 @@ import Root from './components/root';
 
 //testing
 
-import {requestUsers} from './actions/user_actions';
-
+import { requestDrinks } from './actions/drink_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById('root');
-
-  window.requestUsers = requestUsers;
+  window.requestDrinks = requestDrinks;
   let preloadedState = {};
 
   if (window.currentUser) {

@@ -6,20 +6,22 @@ class CheckInFeed extends React.Component{
     super(props);
   }
   //
-  // componentWillMount(){
-  //   if (this.props.fetchCheckIns){
-  //     this.props.fetchCheckIns();
-  //   }
+  componentWillUpdate(nextProps, nextState){
+
+  }
   // }
   //
 
   render(){
+    // debugger
     let checkInItems = Object.keys(this.props.checkIns).reverse().map(checkInId => {
+      console.log(checkInId);
       return (
         <li key={checkInId}><CheckInItem checkIn={this.props.checkIns[checkInId]} /></li>
       );
       }
     );
+    // debugger
     return(
       <div className="checkIn-feed">
         <h3>Recent Activity</h3>

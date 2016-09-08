@@ -14,11 +14,10 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: @users
+    render :index
   end
 
   def show
-
   end
 
   def destroy

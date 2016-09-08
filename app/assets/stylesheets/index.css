@@ -2,8 +2,7 @@
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    background-color: black;
-    background-image: url('https://www.colourbox.com/preview/1753089-background-of-aromatic-roasted-brown-coffee-bean.jpg');
+    background-color: moccasin;
     background-size: contain;
 }
 

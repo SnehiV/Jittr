@@ -6,24 +6,38 @@ import CheckInFeed from './check_in_feed';
 class UserProfile extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      username: "",
+      checkIns: [],
+      userCheckIns: {}
+    };
   }
   //
   componentWillMount(){
-    let checkInParams = {checkIn: {filter: false}};
+    this.props.fetchUsers();
+    let checkInParams = {checkIn: {filter: 'all'}};
     this.props.fetchCheckIns(checkInParams);
   }
+
+  componentWillReceiveProps(nextProps){
+    // let checkInParams = {checkIn: {filter: 'user', id: `${nextProps.params.id}`}};
+    // this.props.fetchCheckIns(checkInParams);
+    this.setState({
+      username: nextProps.users[parseInt(nextProps.params.id)].username,
+      userCheckIns: this.userCheckIns(nextProps.checkIns, parseInt(nextProps.params.id))
+    });
+    console.log(this.state.userCheckIns);
+  }
+
   // //
-  userCheckIns(){
-    let userId = parseInt(this.props.params.id);
-
-    let checkIns = [];
-
-    Object.keys(this.props.checkIns).forEach(checkInId => {
-      if (this.props.checkIns[checkInId].user_id === userId){
-        checkIns.push(this.props.checkIns[checkInId]);
+  userCheckIns(checkIns, userId){
+    let userCheckIns = {};
+    Object.keys(checkIns).forEach(checkInId => {
+      if (checkIns[checkInId].user_id === userId){
+        userCheckIns[checkInId] = checkIns[checkInId];
       }
     });
-    return checkIns;
+    return userCheckIns;
   }
 
   handleFriendRequest(e){
@@ -38,7 +52,7 @@ class UserProfile extends React.Component{
       return;
     }
     let buttonLabel;
-    let userId = this.props.params.id;
+    let userId = parseInt(this.props.params.id);
     Object.keys(this.props.friendships).map(type => {
       this.props.friendships[type].map(user => {
         if (user.id === userId) {
@@ -53,21 +67,16 @@ class UserProfile extends React.Component{
   }
 
   render(){
-    let username;
-    if (Object.keys(this.props.checkIns).length > 0){
-      username = this.userCheckIns()[0].user.username;
-    }
-
-    if (this.props.friendships)
     return (
       <div className='user-profile'>
         <div className='profile-container'>
           <span className='cover-photo'>
-            <h1 className='cover-username'>{username}</h1>
+            <h1 className='cover-username'>{this.state.username}</h1>
             {this.addFriendButton()}
           </span>
           <div className='profile-content'>
-            <CheckInFeed checkIns={this.userCheckIns()}/>
+            {this.state.userCheckIns[0] ? this.state.userCheckIns[0].user_id : ""}
+            <CheckInFeed checkIns={this.state.userCheckIns} />
           </div>
         </div>
       </div>

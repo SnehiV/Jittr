@@ -6,7 +6,8 @@ import Splash from './splash_container';
 import CheckInItem from './check_in_item';
 import UserContainer from './user_profile_container';
 import AppContainer from './app_container';
-import FriendsContainer from './friends-container';
+import FriendsContainer from './friends_container';
+import DrinkProfileContainer from './drink_profile_container';
 
 
 class AppRouter extends React.Component{
@@ -40,6 +41,7 @@ class AppRouter extends React.Component{
           <Route path="home" component={IndexContainer} onEnter={this._ensureLoggedIn}/>
           <Route path="users/:id" component={UserContainer} onEnter={this._ensureLoggedIn} />
           <Route path="friends" component={FriendsContainer} onEnter={this._ensureLoggedIn} />
+          <Route path="drinks/:id" component={DrinkProfileContainer} onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
     );

@@ -10,7 +10,7 @@ export const fetchDrinks = (success, error) => {
 };
 
 
-export const createDrink = (success, drinkParams, error) => {
+export const newDrink = (success, drinkParams, error) => {
   $.ajax({
     url: 'api/drinks',
     type: 'POST',
