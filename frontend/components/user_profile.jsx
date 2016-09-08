@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckInFeed from './check_in_feed';
+import FriendRequestContainer from './friend_requests_container';
 
 
 
@@ -66,6 +67,14 @@ class UserProfile extends React.Component{
     </button>;
   }
 
+  currentUserFriendRequests(){
+    if (this.props.currentUser.id === parseInt(this.props.params.id)){
+      return <FriendRequestContainer />;
+    } else {
+      return;
+    }
+  }
+
   render(){
     return (
       <div className='user-profile'>
@@ -78,7 +87,9 @@ class UserProfile extends React.Component{
             {this.state.userCheckIns[0] ? this.state.userCheckIns[0].user_id : ""}
             <CheckInFeed checkIns={this.state.userCheckIns} />
           </div>
+          {this.currentUserFriendRequests()}
         </div>
+
       </div>
     );
   }

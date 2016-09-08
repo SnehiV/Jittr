@@ -12,22 +12,74 @@ User.create!(username: "Sally", password: "password")
 User.create!(username: "Pamela", password: "password")
 User.create!(username: "Priyanka", password: "password")
 User.create!(username: "Guest", password: "password")
+User.create!(username: "Fernando", password: "password")
+User.create!(username: "Irina", password: "password")
+User.create!(username: "Julius", password: "password")
 
 
-CheckIn.create!(user_id: 1, drink_name: "Cappciuno", rating: 4, review: "good", location:"Specialty's", smiles: 2, username: 'Yeezy')
-CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 1, rating: 2, review: "aight", location:"Starbucks", smiles: 0, username: 'Travy')
-CheckIn.create!(user_id: 1, drink_name: "Americano", rating: 5, review: "really fucking good", location:"Octane", smiles: 4, username: 'Yeezy')
-CheckIn.create!(user_id: 2, drink_name: "Flat White", rating: 1, review: "tasted like milk", location:"Caribou", smiles: 4, username: 'Travy')
-CheckIn.create!(user_id: 3, drink_name: "Regular Black", rating: 3, review: "not bad", location:"Caribou", smiles: 1, username: 'Weezy')
-CheckIn.create!(user_id: 4, drink_name: "Macchiato", rating: 5, review: "perfection", location:"Octane", smiles: 4, username: 'Sally')
-CheckIn.create!(user_id: 5, drink_name: "Americano", rating: 4, review: "I had two", location:"Dancing Goats", smiles: 0, username: 'Pamela')
-CheckIn.create!(user_id: 6, drink_name: "Cappaciuno", rating: 3, review: "it as okay", location:"Starbucks", smiles: 4, username: 'Priyanka')
-CheckIn.create!(user_id: 6, drink_name: "Cappaciuno", rating: 5, review: "much better this time around", location:"Starbucks", smiles: 4, username: 'Priyanka')
-CheckIn.create!(user_id: 7, drink_name: "Cappaciuno", rating: 5, review: "delicious", location:"Working Girl Cafe", smiles: 4, username: 'Guest')
-CheckIn.create!(user_id: 7, drink_name: "Cubano", rating: 4, review: "Just what I needed", location:"Dancing Goats", smiles: 4, username: 'Guest')
-CheckIn.create!(user_id: 7, drink_name: "Doppio", rating: 2, review: "The barista needs some practice", location:"Octnae", smiles: 4, username: 'Guest')
+CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 2, review: "aight", location:"Starbucks", username: 'Travy')
+CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 4, review: "Pretty decent", location:"Saint Frank Coffee", username: 'Julius')
+CheckIn.create!(user_id: 3, drink_name: "Latte", rating: 3, review: "not bad", location:"Caribou", username: 'Weezy')
+CheckIn.create!(user_id: 4, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "perfection", location:"Octane", username: 'Sally')
+CheckIn.create!(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 3, review: "it as okay", location:"Starbucks", username: 'Priyanka')
+CheckIn.create!(user_id: 5, drink_name: "Americano", drink_id: 3, rating: 4, review: "I had two", location:"Dancing Goats", username: 'Pamela')
+CheckIn.create!(user_id: 1, drink_name: "Cappucciuno", drink_id: 1, rating: 4, review: "good", location:"Specialty's", username: 'Yeezy')
+CheckIn.create!(user_id: 9, drink_name: "Americano", drink_id: 3, rating: 3, review: "Not remarkable but it was fine", location:"Octane", username: 'Irina')
+CheckIn.create!(user_id: 7, drink_name: "Cold Brew", drink_id: 6, rating: 2, review: "The barista needs some practice", location:"Octane", username: 'Guest')
+CheckIn.create!(user_id: 10, drink_name: "Cold Brew", drink_id: 6, rating: 5, review: "really good", location:"Dancing Goats", username: "Julius")
+CheckIn.create!(user_id: 8, drink_name: "Cubano", drink_id: 4, rating: 5, review: "perfection", location:"Working Girl Cafe", username: 'Fernando')
+CheckIn.create!(user_id: 9, drink_name: "Cold Brew", drink_id: 6, rating: 4, review: "Very refreshing", location:"Dancing Goats", username: 'Irina')
+CheckIn.create!(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "much better this time around", location:"Starbucks", username: 'Priyanka')
+CheckIn.create!(user_id: 7, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "delicious", location:"Working Girl Cafe", username: 'Guest')
+CheckIn.create!(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 5, review: "really fucking good", location:"Octane", username: 'Yeezy')
+CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 1, review: "tasted like milk", location:"Caribou", username: 'Travy')
+CheckIn.create!(user_id: 7, drink_name: "Cubano", drink_id: 4, rating: 4, review: "Just what I needed", location:"Dancing Goats", username: 'Guest')
+CheckIn.create!(user_id: 8, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Excellent", location:"Octane", username: 'Fernando')
+CheckIn.create!(user_id: 9, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Nothing better than a Macciato at Octane", location:"Octane", username: "Irina")
+CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 2, review: "Wayyyyyy to much sugar", location:"Saint Frank Coffee", username: 'Julius')
 
-Drink.create!(name: "Flat White", brew_style: "Coffee", description: "something", check_in_id: 2)
+
+
+
+Drink.create!(
+  name: "Cappucciuno",
+  brew_style: "Espresso",
+  description: " Italian coffee drink that is traditionally prepared with double espresso, hot milk, and steamed milk foam")
+
+Drink.create!(
+  name: "Flat White",
+  brew_style: "Espresso",
+  description: "The beverage is prepared by pouring microfoam (steamed milk consisting of small, fine bubbles with a glossy or velvety consistency) over a shot of espresso.")
+
+Drink.create!(
+  name: "Americano",
+  brew_style: "Espresso",
+  description: "style of coffee prepared by brewing espresso with added hot water, giving it a similar strength to, but different flavor from drip coffee.")
+
+Drink.create!(
+  name: "Cubano",
+  brew_style: "Espresso",
+  description: "An espresso shot which is sweetened with demerara sugar as it is being brewed, but the name covers other drinks that use Cuban espresso as their base.")
+
+Drink.create!(
+  name: "Macchiato",
+  brew_style: "Espresso",
+  description: "Macchiato, meaning \"stained\", is an espresso with a dash of foamed milk.")
+
+Drink.create!(
+  name: "Cold Brew",
+  brew_style: "Cold Brew",
+  description: "Cold brew, or cold press, is coffee grounds steeped in water at cold or room temperature for an extended period.")
+
+Drink.create!(
+  name: "Cafe au lait",
+  brew_style: "French Press",
+  description: "Coffee with hot milk added")
+
+Drink.create!(
+  name: "Turkish",
+  brew_style: "Turkish",
+  description: "Beans for Turkish coffee are ground to a fine powder. Preparation consists of immersing the coffee grounds in water and heating until it just boils. The coffee and the desired amount of sugar are stirred until all coffee sinks and the sugar is dissolved before boiling.")
 
 
 Yeezy = User.find(1)
@@ -37,6 +89,9 @@ Sally = User.find(4)
 Pamela = User.find(5)
 Priyanka = User.find(6)
 Guest = User.find(7)
+Fernando = User.find(8)
+Irina = User.find(9)
+Julius = User.find(10)
 
 Yeezy.friend_request(Travy);
 Travy.accept_request(Yeezy);
@@ -62,3 +117,13 @@ Priyanka.friend_request(Weezy);
 Priyanka.friend_request(Guest);
 Yeezy.friend_request(Guest);
 Sally.friend_request(Guest);
+Irina.friend_request(Guest);
+Yeezy.friend_request(Guest);
+Fernando.friend_request(Guest);
+Julius.friend_request(Guest);
+Pamela.friend_request(Guest);
+
+Guest.accept_request(Priyanka);
+Guest.accept_request(Fernando);
+Guest.accept_request(Pamela);
+Guest.accept_request(Julius);

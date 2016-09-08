@@ -55,13 +55,16 @@ class DrinkProfile extends React.Component{
   }
 
   relatedUsers(){
-    const relatedUsers = [];
+    let relatedUsers = [];
     // debugger
     if (this.state.checkIns) {
       Object.keys(this.state.checkIns).forEach((checkInId => {
-        relatedUsers.push(this.state.checkIns[checkInId].user);
+          relatedUsers.push(this.state.checkIns[checkInId].user);
       }));
     }
+    relatedUsers = relatedUsers.filter(function (e, i, arr) {
+                      return arr.lastIndexOf(e) === i;
+                    });
     return relatedUsers;
   }
 
@@ -77,13 +80,12 @@ class DrinkProfile extends React.Component{
       </div>
     );
 
-    const UserList =
-    // if this
+    const UserList  =
       this.relatedUsers().map((user, idx) => {
         let userRoute = `/users/${user.id}`;
         return(
           <li key={idx}>
-            <Link to={userRoute}>{user.username}</Link>    
+            <Link to={userRoute}>{user.username}</Link>
           </li>
         );
       });

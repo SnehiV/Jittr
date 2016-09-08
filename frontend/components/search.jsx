@@ -7,12 +7,14 @@ class Search extends React.Component{
     super(props);
     this.state = {
       suggestions: [],
-      value: ""
+      value: "",
+      drinks: []
     };
   }
 
   componentWillMount(){
     this.props.fetchUsers();
+    this.props.fetchDrinks();
   }
 
   getSuggestions(value) {
@@ -24,9 +26,31 @@ class Search extends React.Component{
       this.props.users[userId]
     ));
 
-    return inputLength === 0 ? [] : users.filter(user =>
-      user.username.toLowerCase().slice(0, inputLength) === inputValue
-    );
+    const drinks = Object.keys(this.props.drinks).map(drinkId => {
+      this.state.drinks.push(this.props.drinks[drinkId].name);
+      return this.props.drinks[drinkId];
+    });
+
+    if (inputLength === 0) {
+      return [];
+    } else {
+      let suggestions = [];
+      let userResults = users.filter(user =>
+        user.username.toLowerCase().slice(0, inputLength) === inputValue
+      );
+      let drinkResults = drinks.filter(drink =>
+        drink.name.toLowerCase().slice(0, inputLength) === inputValue
+      );
+      return suggestions.concat(userResults, drinkResults);
+    }
+  }
+
+  getSuggestionType(suggestion){
+    if (this.state.drinks.includes(suggestion.name)) {
+      return 'drink';
+    } else {
+      return 'user';
+    }
   }
 
   getSuggestionValue(suggestion) {
@@ -34,9 +58,15 @@ class Search extends React.Component{
   }
 
   renderSuggestion(suggestion) {
-    return (
-      <span>{suggestion.username}</span>
+    if (this.getSuggestionType(suggestion) === 'drink') {
+      return (
+        <span>{suggestion.name}</span>
+      );
+    } else {
+      return (
+        <span>{suggestion.username}</span>
     );
+    }
   }
 
   onChange(e, {newValue}){
@@ -58,9 +88,15 @@ class Search extends React.Component{
   }
 
   onSuggestionSelected(e, {suggestion, suggestionValue}){
-    let userRoute = `users/${suggestionValue}`;
+    let route;
+     if (this.getSuggestionType(suggestion) === 'drink'){
+       route = `drinks/${suggestionValue}`;
+     } else {
+       route = `users/${suggestionValue}`;
+     }
+
     this.setState({value: ""});
-    this.props.router.push(userRoute);
+    this.props.router.push(route);
   }
 
   render(){
