@@ -31,14 +31,20 @@
   padding-right: 20px;
 }
 
-.search-bar {margin-left: 50px;display: block;position: inherit;}
+.nav-logo-link > p {
+    font-size: small;
+}
+
+.search-bar {display: block;position: inherit;width: 250px;}
 
 .react-autosuggest__container {
-    font-size: larger;
+    font-size: inherit;
+    width: 250px;
 }
 
 .react-autosuggest__input {
     font-size: small;
+    width: 200px;
 }
 
 react-autosuggest__suggestions-container {

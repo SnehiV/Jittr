@@ -103,7 +103,7 @@ class Search extends React.Component{
     const {value, suggestions} = this.state;
 
     const inputProps = {
-      placeholder: 'Search users and coffee drinks',
+      placeholder: '🔎  Search users and coffee',
       value,
       onChange: this.onChange.bind(this)
     };

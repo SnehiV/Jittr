@@ -12,7 +12,9 @@ class Splash extends React.Component{
       return(
         <div className="splash-page">
           <div className="logo-buttons">
-            <h1 className="field">Jittr</h1>
+            <h1 className="field">Jittr
+              <h3>Sip Share</h3>
+            </h1>
             <div className="input-fields">
               <Link to="/login" className="splash-link">Login</Link>
               <Link to="/signup" className="splash-link">Sign Up</Link>
