@@ -17,7 +17,7 @@ class Friends extends React.Component{
   removeFriend(id){
     return (e) => {
       e.preventDefault();
-      let friendshipParams = {friendships: {user_id: id}};
+      let friendshipParams = {friendship: {user_id: id}};
       return this.props.deleteFriend(friendshipParams);
     };
   }

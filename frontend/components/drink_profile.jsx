@@ -72,7 +72,7 @@ class DrinkProfile extends React.Component{
     const Profile = (
       <div className="drink-profile">
         <div className="profile-header">
-          <h2>{this.state.name}</h2>
+          <h1>{this.state.name}</h1>
           <h4>{this.state.brewStyle}</h4>
           <p>{this.state.description}</p>
         </div>

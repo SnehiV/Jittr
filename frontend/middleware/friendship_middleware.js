@@ -10,7 +10,6 @@ const FriendshipMiddleware = store => next => action => {
 
  let success = (friendshipData) => store.dispatch(receiveFriendshipData(friendshipData));
  let error = (errors) => store.dispatch(receiveErrors(errors));
-
  let currentUserId;
  if (store.getState().session.currentUser){
    currentUserId = store.getState().session.currentUser.id;

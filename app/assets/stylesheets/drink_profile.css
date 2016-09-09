@@ -1,0 +1,18 @@
+.profile-header > h4 {
+    font-size: larger;
+    font-family: sans-serif;
+}
+
+.profile-header > p {
+    font-family: sans-serif;
+}
+
+.profile-header {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.drink-profile {
+    display: flex;
+}
