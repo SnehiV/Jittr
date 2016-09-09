@@ -9,27 +9,39 @@ class UserProfile extends React.Component{
     super(props);
     this.state = {
       username: "",
-      checkIns: [],
-      userCheckIns: {}
+      userCheckIns: {},
+      status: false
     };
   }
   //
   componentWillMount(){
     this.props.fetchUsers();
+    this.props.fetchFriendshipData();
     let checkInParams = {checkIn: {filter: 'all'}};
     this.props.fetchCheckIns(checkInParams);
   }
 
   componentWillReceiveProps(nextProps){
-    // let checkInParams = {checkIn: {filter: 'user', id: `${nextProps.params.id}`}};
-    // this.props.fetchCheckIns(checkInParams);
     this.setState({
       username: nextProps.users[parseInt(nextProps.params.id)].username,
-      userCheckIns: this.userCheckIns(nextProps.checkIns, parseInt(nextProps.params.id))
+      userCheckIns: this.userCheckIns(nextProps.checkIns, parseInt(nextProps.params.id)),
+      status: this.updateFriendStatus(nextProps.friendships)
     });
   }
 
-  // //
+  updateFriendStatus(friendships){
+    let userId = parseInt(this.props.params.id);
+    let status = false;
+    Object.keys(friendships).forEach(type => {
+      friendships[type].forEach(user => {
+        if (user.id === userId) {
+          status = type;
+        }
+      });
+    });
+    return status;
+  }
+
   userCheckIns(checkIns, userId){
     let userCheckIns = {};
     Object.keys(checkIns).forEach(checkInId => {
@@ -40,30 +52,44 @@ class UserProfile extends React.Component{
     return userCheckIns;
   }
 
-  handleFriendRequest(e){
+  handleRequest(e, requestType){
     e.preventDefault();
     let userId = this.props.params.id;
     let friendshipParams = {friendship: {user_id: userId}};
-    this.props.friendRequest(friendshipParams);
+    if (requestType === "add"){
+      this.props.friendRequest(friendshipParams);
+
+    } else if (requestType === "remove") {
+      this.props.deleteFriend(friendshipParams);
+    }
   }
 
   addFriendButton(){
-    if (this.props.currentUser.id === parseInt(this.props.params.id)){
+    if (this.props.currentUser.id === parseInt(this.props.params.id)) {
       return;
     }
+
     let buttonLabel;
-    let userId = parseInt(this.props.params.id);
-    Object.keys(this.props.friendships).map(type => {
-      this.props.friendships[type].map(user => {
-        if (user.id === userId) {
-          buttonLabel = "Pending";
-        }
-      });
-    });
-    buttonLabel = "Add Friend";
-    return <button className='add-friend'
-      onClick={this.handleFriendRequest.bind(this)}>{buttonLabel}
-    </button>;
+    let disabled = false;
+    let clickHandle = () => {};
+    if (this.state.status === "requested_friends"){
+      buttonLabel = "Awaiting Response";
+      disabled = true;
+    } else if (this.state.status === "pending_friends"){
+      buttonLabel = "Pending";
+      disabled = true;
+    } else if (this.state.status === "friends"){
+      buttonLabel = "Remove Friend";
+      clickHandle = (e) => this.handleRequest.bind(this)(e, "remove");
+    } else {
+      buttonLabel = "Add Friend";
+      clickHandle = (e) => this.handleRequest.bind(this)(e, "add");
+    }
+    return (
+      <button className='friend-button' disabled={disabled}
+        onClick={clickHandle}>{buttonLabel}
+      </button>
+    );
   }
 
   currentUserFriendRequests(){
@@ -79,18 +105,16 @@ class UserProfile extends React.Component{
       <div className='user-profile'>
         <div className='profile-container'>
           <span className='cover-photo'>
-            <h1 className='cover-username'>{this.state.username}</h1>
             {this.addFriendButton()}
+            <h1 className='cover-username'>{this.state.username}</h1>
           </span>
           <div className="profile-content-container">
             <div className='profile-content'>
-              {this.state.userCheckIns[0] ? this.state.userCheckIns[0].user_id : ""}
               <CheckInFeed checkIns={this.state.userCheckIns} />
             </div>
             {this.currentUserFriendRequests()}
           </div>
         </div>
-
       </div>
     );
   }

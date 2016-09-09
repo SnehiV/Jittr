@@ -7,16 +7,7 @@ class Splash extends React.Component{
     super(props);
   }
 
-  // const handleLogin = () => {
-  //   router.push('/login');
-  // };
-  //
-  // const handleSignUp = () => {
-  //   router.push('/signup');
-  // };
 
-  // <button className="splash-link" onClick={handleLogin}>Log In</button>
-  // <button className="splash-link" onClick={handleSignUp}>Sign Up</button>
   render(){
       return(
         <div className="splash-page">

@@ -29,7 +29,6 @@ class AppRouter extends React.Component{
       replace('/');
     }
   }
-  // onEnter={this._redirectIfLoggedIn}
 
   render(){
     return (

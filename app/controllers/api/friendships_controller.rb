@@ -5,7 +5,6 @@ class Api::FriendshipsController < ApplicationController
   def create
     @pending_friend = User.find(friendship_params["user_id"])
     current_user.friend_request(@pending_friend)
-
     render json: generate_friendships
   end
 

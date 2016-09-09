@@ -23,5 +23,4 @@ class CheckIn < ActiveRecord::Base
 
   has_one :drink
 
-  # has_one :location
 end

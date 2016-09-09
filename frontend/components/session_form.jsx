@@ -14,7 +14,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps({session}) {
-    // debugger
     if (this.props.session.currentUser !== session.currentUser){
       this.props.router.replace("/home");
     }

@@ -93,6 +93,8 @@ form.checkIn-form {
     font-size: large;
     text-align: center;
     font-weight: bold;
+    height: 99%;
+    padding: 10px 0 10px 0;
 }
 
 .checkIn-review > p {
@@ -121,8 +123,13 @@ h3 {font-family: sans-serif;color: black;padding: 0 0 10px 0;margin: 0;border-bo
     font-size: larger;
 }
 
-.checkIn-text > p > a {color: chocolate;}
-.checkIn-text > p > a:hover {color: coral; }
+.checkIn-text > p > a {
+  color: chocolate;
+  cursor: pointer;
+}
+.checkIn-text > p > a:hover {
+  color: coral;
+  cursor: pointer}
 
 .toggled-cups {
   color: chocolate;
@@ -172,6 +179,7 @@ textarea.checkIn-input::-webkit-input-placeholder {
 .hover-rater {
     text-align: center;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .hover-rater > h4 {margin: 10px 7px 7px 7px;font-weight: 500;font-family: sans-serif;color: rgba(128, 128, 128, 0.8);}
@@ -190,4 +198,9 @@ textarea.checkIn-input::-webkit-input-placeholder {
     width: 100%;
     background-color: white;
     padding: 20px;
+}
+
+.errors > li {
+    color: chocolate;
+    padding-top: 10px;
 }

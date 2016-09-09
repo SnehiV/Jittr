@@ -8,11 +8,64 @@
 }
 
 .profile-header {
-    padding: 30px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    height: 30%;
+    background-color: white;
 }
 
 .drink-profile {
     display: flex;
+    background-color: white;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 30px 0 30px 0;
 }
+
+.profile-header > h2 {
+  font-family: 'Calligraffitti';
+  font-size: 50px;
+  margin: 0;
+}
+
+.drink-profile-content {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: space-between;
+}
+
+.drink-profile-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: oldlace;
+}
+
+.user-list-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: white;
+    justify-content: center;
+    margin: 30px;
+    height: 99%;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list > li {
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid lightgray;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.user-list > li > a {color: chocolate;}
+.user-list > li > a:hover {color: coral; }

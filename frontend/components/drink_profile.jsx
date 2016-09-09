@@ -37,12 +37,6 @@ class DrinkProfile extends React.Component{
     }
   }
 
-  // selectDrink(){
-  //   debugger
-  //   const currentDrinkId = parseInt(this.props.params.id);
-  //   return this.props.drinks[currentDrinkId];
-  // }
-
   findRelatedCheckIns(checkIns){
     let relatedCheckIns = {};
     let drinkId = this.state.drinkId;
@@ -56,7 +50,7 @@ class DrinkProfile extends React.Component{
 
   relatedUsers(){
     let relatedUsers = [];
-    // debugger
+
     if (this.state.checkIns) {
       Object.keys(this.state.checkIns).forEach((checkInId => {
           relatedUsers.push(this.state.checkIns[checkInId].user);
@@ -72,7 +66,7 @@ class DrinkProfile extends React.Component{
     const Profile = (
       <div className="drink-profile">
         <div className="profile-header">
-          <h1>{this.state.name}</h1>
+          <h2>{this.state.name}</h2>
           <h4>{this.state.brewStyle}</h4>
           <p>{this.state.description}</p>
         </div>
@@ -98,7 +92,9 @@ class DrinkProfile extends React.Component{
         </div>
         <div className="user-list-container">
           <h3>Users who drink {this.state.name}</h3>
-          {UserList}
+          <ul className='user-list'>
+            {UserList}
+          </ul>
         </div>
       </div>
     );

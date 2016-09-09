@@ -16,7 +16,6 @@ const CheckInReducer = (state = {checkIns: {}, errors: []}, action) => {
       return newState;
     case CheckInConstants.DELETE_CHECK_IN_FROM_STATE:
       newState = merge({}, state);
-      // debugger
       delete newState[action.deletedCheckIn.id];
       return newState;
     default:

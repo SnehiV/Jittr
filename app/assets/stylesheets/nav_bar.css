@@ -30,3 +30,25 @@
 .nav-list > li {
   padding-right: 20px;
 }
+
+.search-bar {margin-left: 50px;display: block;position: inherit;}
+
+.react-autosuggest__container {
+    font-size: larger;
+}
+
+.react-autosuggest__input {
+    font-size: small;
+}
+
+react-autosuggest__suggestions-container {
+    display: flex;
+}
+
+.react-autosuggest__container.react-autosuggest__container--open {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: chocolate;
+    cursor: pointer;
+}

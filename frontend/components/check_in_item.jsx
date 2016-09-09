@@ -14,7 +14,6 @@ class CheckInItem extends React.Component{
       this.location = this.props.checkIn.location;
       this.review = this.props.checkIn.review;
       this.rating = this.props.checkIn.rating;
-      // this.drinkId = this.props.checkIn.drink_id;
   }
 
 
