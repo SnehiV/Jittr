@@ -64,10 +64,10 @@
     flex;
     width: 100%;
     flex-direction: column;
-    justify-content: initial;
+    justify-content: space-between;
     align-items: center;
     color: moccasin;
-    }
+  }
 
   .splash-link{
     font-size: 25px;
