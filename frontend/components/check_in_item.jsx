@@ -21,7 +21,7 @@ class CheckInItem extends React.Component{
 
 
   render(){
-    let drinkRoute = '/';
+    let drinkRoute = '/home';
     if (this.props.checkIn.drink_id){
       this.drinkId = this.props.checkIn.drink_id;
       drinkRoute = `/drinks/${this.drinkId}`;
