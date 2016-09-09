@@ -95,19 +95,21 @@
   }
 
   .field {
-    font-size: 750%;
-    margin: 0;
-    font-weight: inherit;
-    text-decoration: inherit;
-    display: flex;
-    justify-content: flex-end;
-    color: moccasin;
-    text-align: center;
-    font-family: 'Calligraffitti';
-    font: cursive;
-    font-weight: bolder;
-    height: 70%;
-  }
+      font-size: 750%;
+      margin: 0;
+      font-weight: inherit;
+      text-decoration: inherit;
+      display: flex;
+      color: moccasin;
+      text-align: center;
+      font-family: 'Calligraffitti';
+      font: cursive;
+      font-weight: bolder;
+      height: 70%;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
 
   .splash-links {
    display: flex;
