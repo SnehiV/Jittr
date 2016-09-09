@@ -47,6 +47,6 @@ export const receiveCheckIns = (checkIns) => ({
 });
 
 export const receiveErrors = (errors) => ({
-  type: CheckInConstants.RECEIVE_ERRORS,
+  type: CheckInConstants.RECEIVE_CHECKIN_ERRORS,
   errors
 });

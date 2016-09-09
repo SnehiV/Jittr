@@ -25,10 +25,10 @@ class FriendRequests extends React.Component{
 
   render(){
     let requestedFriends;
-    let userRoute = `/users/${this.userId}`;
     if (this.props.friendships.requested_friends){
         requestedFriends = this.props.friendships.requested_friends.map((requestFriend, idx) => {
           let userId = requestFriend.id;
+          let userRoute = `/users/${userId}`;
           let username = requestFriend.username;
 
           return (

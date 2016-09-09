@@ -10,7 +10,7 @@ const CheckInReducer = (state = {checkIns: {}, errors: []}, action) => {
     case CheckInConstants.RECEIVE_CHECK_INS:
       newState = merge({}, state, {checkIns: action.checkIns});
       return newState;
-    case CheckInConstants.RECEIVE_ERRORS:
+    case CheckInConstants.RECEIVE_CHECKIN_ERRORS:
       newState = merge({}, state);
       newState.errors = action.errors;
       return newState;

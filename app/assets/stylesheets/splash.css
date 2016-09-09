@@ -21,10 +21,10 @@
 
  .demo-login {
      height: 0;
-     font-size: x-large;
      color: moccasin;
      font-weight: inherit;
      font-size: xx-large;
+     font-family: sans-serif;
  }
 
  .input1 {padding: 10px;margin: 0 5px 0 5px;}

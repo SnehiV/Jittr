@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
     let errors;
     if (this.props.session.errors){
       errors = this.props.session.errors.map(msg => (
-        <li>
+        <li key={msg}>
           {msg}
         </li>
       ));

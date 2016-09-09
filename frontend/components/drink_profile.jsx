@@ -77,8 +77,9 @@ class DrinkProfile extends React.Component{
     const UserList  =
       this.relatedUsers().map((user, idx) => {
         let userRoute = `/users/${user.id}`;
+        let key=`${user.username}${idx}`;
         return(
-          <li key={idx}>
+          <li key={key}>
             <Link to={userRoute}>{user.username}</Link>
           </li>
         );

@@ -64,6 +64,11 @@ body {
     background-color: chocolate;
 }
 
+.friends-list-container > h2 {
+    font-family: sans-serif;
+    font-size: larger;
+}
+
 
 .friend > a {color: chocolate;}
 .friend > a:hover {color: coral; }

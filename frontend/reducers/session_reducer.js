@@ -7,6 +7,7 @@ const SessionReducer = (state = {currentUser: null, errors: []}, action) => {
     case SessionConstants.RECEIVE_CURRENT_USER:
       newState = merge({}, state);
       newState.currentUser = action.currentUser;
+      newState.error = [];
       return newState;
     case SessionConstants.RECEIVE_ERRORS:
       newState = merge({}, state);
@@ -15,6 +16,7 @@ const SessionReducer = (state = {currentUser: null, errors: []}, action) => {
     case SessionConstants.LOGOUT:
       newState = merge({}, state);
       newState.currentUser = null;
+      newState.errors = [];
       return newState;
     default:
       return state;
