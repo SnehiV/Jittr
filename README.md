@@ -94,7 +94,7 @@ about the current user friendships to the front end in so the friendship compone
 The home page returns a feed that comprises of the check-ins created by the current user and friends of
 the current user.
 
-[image of friends page](docs/wireframes/Friends-page.png)
+[image of friends page](docs/Friends-page.png)
 
 ### Profiles
 
@@ -118,40 +118,3 @@ for that location.
 
 Another component that would render the highest rated check-ins based on
 drinks or locations.
-
-
-
-
-
-
-
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
