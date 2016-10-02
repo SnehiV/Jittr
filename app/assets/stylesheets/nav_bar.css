@@ -35,11 +35,36 @@
     font-size: small;
 }
 
-.search-bar {display: block;position: inherit;width: 250px;}
-
 .react-autosuggest__container {
     font-size: inherit;
-    width: 250px;
+    width: 200px;
+}
+
+div#react-autowhatever-1 {
+    position: absolute;
+    background-color: white;
+    top: 50px;
+    width: 200px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+.react-autosuggest__suggestion {
+    padding: 5px;
+}
+
+.react-autosuggest__suggestion:focus {
+  background-color: chocolate;
+  color: white
+}
+
+.search-item:focus .react-autosuggest__suggestion {
+  background-color: chocolate;
+  color: white
+}
+
+.react-autosuggest__suggestion:hover {
+  background-color: chocolate;
+  color: white
 }
 
 .react-autosuggest__input {

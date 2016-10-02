@@ -17,26 +17,26 @@ User.create!(username: "Irina", password: "password")
 User.create!(username: "Julius", password: "password")
 
 
-CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 2, review: "aight", location:"Starbucks", username: 'Travy')
-CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 4, review: "Pretty decent", location:"Saint Frank Coffee", username: 'Julius')
-CheckIn.create!(user_id: 3, drink_name: "Latte", rating: 3, review: "not bad", location:"Caribou", username: 'Weezy')
-CheckIn.create!(user_id: 4, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "perfection", location:"Octane", username: 'Sally')
-CheckIn.create!(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 3, review: "it as okay", location:"Starbucks", username: 'Priyanka')
-CheckIn.create!(user_id: 5, drink_name: "Americano", drink_id: 3, rating: 4, review: "I had two", location:"Dancing Goats", username: 'Pamela')
-CheckIn.create!(user_id: 1, drink_name: "Cappucciuno", drink_id: 1, rating: 4, review: "good", location:"Specialty's", username: 'Yeezy')
-CheckIn.create!(user_id: 9, drink_name: "Americano", drink_id: 3, rating: 3, review: "Not remarkable but it was fine", location:"Octane", username: 'Irina')
-CheckIn.create!(user_id: 7, drink_name: "Cold Brew", drink_id: 6, rating: 2, review: "The barista needs some practice", location:"Octane", username: 'Guest')
-CheckIn.create!(user_id: 10, drink_name: "Cold Brew", drink_id: 6, rating: 5, review: "really good", location:"Dancing Goats", username: "Julius")
-CheckIn.create!(user_id: 8, drink_name: "Cubano", drink_id: 4, rating: 5, review: "perfection", location:"Working Girl Cafe", username: 'Fernando')
-CheckIn.create!(user_id: 9, drink_name: "Cold Brew", drink_id: 6, rating: 4, review: "Very refreshing", location:"Dancing Goats", username: 'Irina')
-CheckIn.create!(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "much better this time around", location:"Starbucks", username: 'Priyanka')
-CheckIn.create!(user_id: 7, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "delicious", location:"Working Girl Cafe", username: 'Guest')
-CheckIn.create!(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 5, review: "really fucking good", location:"Octane", username: 'Yeezy')
-CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 1, review: "tasted like milk", location:"Caribou", username: 'Travy')
-CheckIn.create!(user_id: 7, drink_name: "Cubano", drink_id: 4, rating: 4, review: "Just what I needed", location:"Dancing Goats", username: 'Guest')
-CheckIn.create!(user_id: 8, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Excellent", location:"Octane", username: 'Fernando')
-CheckIn.create!(user_id: 9, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Nothing better than a Macciato at Octane", location:"Octane", username: "Irina")
-CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 2, review: "Wayyyyyy to much sugar", location:"Saint Frank Coffee", username: 'Julius')
+CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 2, review: "aight", location_name:"Working Girls' Cafe", location_id: 2, username: 'Travy')
+CheckIn.create!(user_id: 5, drink_name: "Americano", drink_id: 3, rating: 4, review: "I had two", location_name:"Dancing Goats", location_id: 1, username: 'Pamela')
+CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 4, review: "Pretty decent", location_name:"Saint Frank Coffee", username: 'Julius')
+CheckIn.create!(user_id: 3, drink_name: "Latte", rating: 3, review: "not bad", location_name:"Caribou", username: 'Weezy')
+CheckIn.create!(user_id: 4, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "perfection", location_name:"Octane", username: 'Sally')
+CheckIn.create!(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 3, review: "it as okay", location_name:"Starbucks", username: 'Priyanka')
+CheckIn.create!(user_id: 1, drink_name: "Cappucciuno", drink_id: 1, rating: 4, review: "good", location_name:"Specialty's", username: 'Yeezy')
+CheckIn.create!(user_id: 9, drink_name: "Americano", drink_id: 3, rating: 3, review: "Not remarkable but it was fine", location_name:"Octane", username: 'Irina')
+CheckIn.create!(user_id: 7, drink_name: "Cold Brew", drink_id: 6, rating: 2, review: "The barista needs some practice", location_name:"Octane", username: 'Guest')
+CheckIn.create!(user_id: 10, drink_name: "Cold Brew", drink_id: 6, rating: 5, review: "really good", location_name:"Dancing Goats", location_id: 1, username: "Julius")
+CheckIn.create!(user_id: 8, drink_name: "Cubano", drink_id: 4, rating: 5, review: "perfection", location_name:"Working Girl Cafe", username: 'Fernando')
+CheckIn.create!(user_id: 9, drink_name: "Cold Brew", drink_id: 6, rating: 4, review: "Very refreshing", location_name:"Dancing Goats", location_id: 1, username: 'Irina')
+CheckIn.create!(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "much better this time around", location_name:"Starbucks", username: 'Priyanka')
+CheckIn.create!(user_id: 7, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "delicious", location_name:"Working Girl Cafe", username: 'Guest')
+CheckIn.create!(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 5, review: "really fucking good", location_name:"Octane", username: 'Yeezy')
+CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 1, review: "tasted like milk", location_name:"Caribou", username: 'Travy')
+CheckIn.create!(user_id: 7, drink_name: "Cubano", drink_id: 4, rating: 4, review: "Just what I needed", location_name:"Dancing Goats", location_id: 1, username: 'Guest')
+CheckIn.create!(user_id: 8, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Excellent", location_name:"Octane", username: 'Fernando')
+CheckIn.create!(user_id: 9, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Nothing better than a Macciato at Octane", location_name:"Octane", username: "Irina")
+CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 2, review: "Wayyyyyy to much sugar", location_name:"Saint Frank Coffee", username: 'Julius')
 
 
 
@@ -81,6 +81,19 @@ Drink.create!(
   brew_style: "Turkish",
   description: "Beans for Turkish coffee are ground to a fine powder. Preparation consists of immersing the coffee grounds in water and heating until it just boils. The coffee and the desired amount of sugar are stirred until all coffee sinks and the sugar is dissolved before boiling.")
 
+Location.create!(
+  name: "Dancing Goats",
+  address: "101 coffee drive",
+  lat: 33.774135,
+  lng: -84.367017
+)
+
+Location.create!(
+  name: "Working Girls' Cafe",
+  address: "122 New Montgomery St, San Francisco, CA 94105",
+  lat: 37.787227,
+  lng: -122.400304
+)
 
 Yeezy = User.find(1)
 Travy = User.find(2)

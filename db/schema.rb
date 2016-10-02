@@ -11,30 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907171507) do
+ActiveRecord::Schema.define(version: 20160929172345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "check_ins", force: :cascade do |t|
-    t.integer  "user_id",                 null: false
+    t.integer  "user_id",                   null: false
     t.integer  "drink_id"
-    t.string   "drink_name",              null: false
+    t.string   "drink_name",                null: false
     t.integer  "rating"
     t.text     "review"
     t.integer  "location_id"
-    t.string   "location",                null: false
-    t.integer  "smiles",      default: 0
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "username",                null: false
+    t.string   "location_name",             null: false
+    t.integer  "smiles",        default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "username",                  null: false
   end
 
   create_table "drinks", force: :cascade do |t|
     t.string   "brew_style",  null: false
     t.string   "name",        null: false
     t.text     "description", null: false
-    t.integer  "check_in_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -47,6 +46,15 @@ ActiveRecord::Schema.define(version: 20160907171507) do
     t.datetime "updated_at"
     t.integer  "blocker_id"
     t.integer  "status"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "address",    null: false
+    t.decimal  "lat"
+    t.decimal  "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

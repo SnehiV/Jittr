@@ -1,23 +1,23 @@
 import React from 'react';
+import Rating from 'react-rating';
 
-export const Rating = ({rating}) => {
+export const RatingDisplay = ({rating}) => {
   let coffeeCupRatings = [];
-  for (var i = 0; i < 5; i++) {
-    let cup;
 
-    if (i < rating) {
-      cup = <div key={i} className="toggled-cups">
-              <i className="fa fa-coffee" aria-hidden="true"></i>
-            </div>;
-    } else {
-      cup = <div key={i} className="untoggled-cups">
-              <i className="fa fa-coffee" aria-hidden="true"></i>
-            </div>;
-    }
-    coffeeCupRatings.push(cup);
-  }
+  let greyCup = <div className="untoggled-cups">
+                  <i className="fa fa-coffee" aria-hidden="true"></i>
+                </div>;
+  let colorCup = <div className="toggled-cups">
+                  <i className="fa fa-coffee" aria-hidden="true"></i>
+                 </div>;
 
   return(
-    <span className='rating-cups'>{coffeeCupRatings}</span>
+    <div className="rating-cups">
+      <Rating initialRate={rating}
+        empty={greyCup} full={colorCup}
+        placeholder={colorCup}
+        fractions={2}
+        readonly={true} />
+    </div>
   );
 };

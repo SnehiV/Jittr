@@ -21,6 +21,11 @@ class CheckIn < ActiveRecord::Base
 
   belongs_to :user
 
-  has_one :drink
+  belongs_to :drink
+
+  belongs_to :location,
+  primary_key: :id,
+  foreign_key: :location_id,
+  class_name: :Location
 
 end

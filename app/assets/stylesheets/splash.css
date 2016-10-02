@@ -1,5 +1,5 @@
 .errors {
-  height: 20%;
+  height: 15%;
   list-style: none;
   width: 50%;
   font-size: initial;
@@ -7,7 +7,6 @@
   justify-content: center;
   font-weight: bold;
   color: moccasin;
-  margin-bottom: 10px;
 }
 
 
@@ -15,7 +14,7 @@
      display: flex;
      width: 100%;
      flex-direction: column;
-     height: 50%;
+     height: 60%;
      align-items: center;
  }
 
@@ -27,20 +26,20 @@
      font-family: sans-serif;
  }
 
- .input1 {padding: 10px;margin: 0 5px 0 5px;}
+ .input1 {padding: 10px;margin: 0 5px 0 5px;font-size: 10px;height: 2px;border-radius: 7px;width: 100px;margin: 5px;font-family: sans-serif;}
 
  .button1 {
      display: block;
-     width: 33%;
+     width: 100%;
  }
 
  .submit-button {
-   margin: 0 auto;
    height: 20%;
    display: flex;
-   width: 50%;
+   width: 90%;
    justify-content: center;
    align-items: center;
+   margin: 10px;
  }
 
  .splash-page{
@@ -96,7 +95,6 @@
 
   .field {
       font-size: 750%;
-      margin: 0;
       font-weight: inherit;
       text-decoration: inherit;
       display: flex;
@@ -105,15 +103,17 @@
       font-family: 'Calligraffitti';
       font: cursive;
       font-weight: bolder;
-      height: 70%;
+      height: 50%;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: flex-end;
+      width: 300px;
     }
 
 
   .splash-links {
    display: flex;
-   margin: 20px;
+   flex-direction: column;
+   align-items: center;
  }
 
 

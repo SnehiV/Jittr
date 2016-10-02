@@ -24,7 +24,7 @@ class DrinkProfile extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    let currentDrinkId = parseInt(this.props.params.id);
+    let currentDrinkId = parseInt(nextProps.params.id);
     if (nextProps.drinks[currentDrinkId]) {
       this.setState({
         drink: nextProps.drinks[currentDrinkId],
@@ -50,15 +50,17 @@ class DrinkProfile extends React.Component{
 
   relatedUsers(){
     let relatedUsers = [];
-
+    let usernames = [];
     if (this.state.checkIns) {
       Object.keys(this.state.checkIns).forEach((checkInId => {
+        let user = this.state.checkIns[checkInId].user;
+        if (!usernames.includes(user.username)){
+          usernames.push(user.username);
           relatedUsers.push(this.state.checkIns[checkInId].user);
+        }
       }));
     }
-    relatedUsers = relatedUsers.filter(function (e, i, arr) {
-                      return arr.lastIndexOf(e) === i;
-                    });
+
     return relatedUsers;
   }
 
@@ -84,7 +86,6 @@ class DrinkProfile extends React.Component{
           </li>
         );
       });
-
     return(
       <div className="drink-profile-container">
         <div className="drink-profile-content">

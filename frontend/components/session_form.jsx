@@ -69,7 +69,10 @@ class SessionForm extends React.Component {
     return(
       <div className="splash-page">
         <form className="sessionForm" onSubmit={this.handleSubmit()}>
-            <h1 className="field"><Link to="/" className="logo">Jittr</Link></h1>
+            <h1 className="field">
+              <Link to="/" className="logo">Jittr</Link>
+              <h3>Sip, Share</h3>
+            </h1>
             <div className="splash-links">
               <input
                 className="input1"
@@ -84,9 +87,11 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.password}
                 onChange={this.update('password')}  />
-            </div>
-            <div className="submit-button">
-              <button className="button1">Submit</button>
+
+              <div className="submit-button">
+                <button className="button1">Submit</button>
+              </div>
+
             </div>
             <ul className="errors">{errors}</ul>
             <a className="demo-login" onClick={this.handleGuestLogin()}>Demo Login</a>

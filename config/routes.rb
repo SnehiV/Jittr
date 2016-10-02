@@ -5,6 +5,7 @@
     resources :check_ins, only: [:create, :index, :update, :destroy]
     resources :friendships, only: [:create, :index, :update, :destroy]
     resources :drinks, only: [:create, :index, :destroy, :show]
+    resources :locations, only: [:create, :index, :destroy, :show]
   end
 
   root to: 'static_pages#root'

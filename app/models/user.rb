@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
 
   has_many :drinks, through: :check_ins
 
+  has_many :locations, through: :check_ins
+
   has_friendship
 
   has_many :comments

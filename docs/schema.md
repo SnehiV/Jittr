@@ -20,7 +20,7 @@
 #  review      :text        
 #  location_id :integer        
 #  location    :string
-#  smiles      :integer          default 
+#  smiles      :integer          default
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

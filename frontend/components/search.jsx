@@ -10,6 +10,7 @@ class Search extends React.Component{
       value: "",
       drinks: []
     };
+    this.firstFocus = false;
   }
 
   componentWillMount(){
@@ -18,7 +19,6 @@ class Search extends React.Component{
   }
 
   getSuggestions(value) {
-
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
@@ -57,28 +57,35 @@ class Search extends React.Component{
     return suggestion.id;
   }
 
-  renderSuggestion(suggestion) {
+  renderSuggestion(suggestion, {query}) {
     if (this.getSuggestionType(suggestion) === 'drink') {
       return (
-        <span>{suggestion.name}</span>
+        <span className='search-item'>{suggestion.name}</span>
       );
     } else {
       return (
-        <span>{suggestion.username}</span>
+        <span className='search-item'>{suggestion.username}</span>
     );
     }
   }
 
-  onChange(e, {newValue}){
-    this.setState({
-      value: newValue
-    });
+  onChange(e, {newValue, method}){
+    if (method === 'type') {
+      this.setState({
+        value: newValue
+      });
+    } else if (method === 'down') {
+      let item = document.getElementById("react-autowhatever-1--item-0");
+      if (item) {item.focus();}
+    }
   }
 
   onSuggestionsFetchRequested({value}){
-    this.setState({
-      suggestions: this.getSuggestions(value)
-    });
+    if (typeof value === 'string'){
+      this.setState({
+        suggestions: this.getSuggestions(value)
+      });
+    }
   }
 
   onSuggestionsClearRequested(){
@@ -105,7 +112,7 @@ class Search extends React.Component{
     const inputProps = {
       placeholder: '🔎  Search users and coffee',
       value,
-      onChange: this.onChange.bind(this)
+      onChange: this.onChange.bind(this),
     };
 
     return (
