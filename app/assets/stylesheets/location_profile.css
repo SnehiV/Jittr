@@ -1,4 +1,18 @@
 #map-container {
-  width: 250px;
-  height: 250px
+  height: 250px;
+  width: 350px;
+  margin: 30px;
+}
+
+.location-profile-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: oldlace;
+}
+.location-profile-container-left {
+
+}
+
+.location-profile-container-right {
+
 }

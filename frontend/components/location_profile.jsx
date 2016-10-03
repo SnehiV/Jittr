@@ -108,13 +108,13 @@ class LocationProfile extends React.Component{
             <CheckInFeed checkIns={this.state.checkIns} />
           </div>
           <div className="location-profile-content-right">
+            <VenueMap coords={{lat: parseFloat(this.state.lat), lng: parseFloat(this.state.lng)}} />
             <div className="user-list-container">
               <h3>Users who go to {this.state.name}</h3>
               <ul className='user-list'>
                 {UserList}
               </ul>
             </div>
-            <VenueMap coords={{lat: parseFloat(this.state.lat), lng: parseFloat(this.state.lng)}} />
           </div>
         </div>
       );
