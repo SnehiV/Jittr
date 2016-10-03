@@ -9,7 +9,7 @@ import AppContainer from './app_container';
 import FriendsContainer from './friends_container';
 import DrinkProfileContainer from './drink_profile_container';
 import LocationProfileContainer from './location_profile_container';
-
+import TopLocationsContainer from './top_locations_container';
 
 class AppRouter extends React.Component{
   constructor(props){
@@ -43,6 +43,7 @@ class AppRouter extends React.Component{
           <Route path="friends" component={FriendsContainer} onEnter={this._ensureLoggedIn} />
           <Route path="drinks/:id" component={DrinkProfileContainer} onEnter={this._ensureLoggedIn} />
           <Route path="locations/:id" component={LocationProfileContainer} onEnter={this._ensureLoggedIn} />
+          <Route path="TopLocations" component={TopLocationsContainer} onEnter={this._ensureLoggedIn} />
         </Route>
       </Router>
     );

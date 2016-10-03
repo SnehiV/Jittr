@@ -35,7 +35,7 @@
     margin: 20px 0 20px 0;
 }
 
-.drink-profile-content {
+.drink-profile-content-left {
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -55,7 +55,6 @@
     background-color: white;
     justify-content: center;
     margin: 30px;
-    height: 25%;
 }
 
 .user-list {

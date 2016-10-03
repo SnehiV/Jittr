@@ -1,0 +1,47 @@
+#top-locations-map-container {
+  width: 40%;
+  height: 500px;
+}
+
+.top-locations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.location-list-container {
+    background-color: white;
+    padding: 20px;
+}
+
+.location-list-item {
+    display: flex;
+    font-family: sans-serif;
+    border-bottom: 1px solid lightgrey;
+    padding: 20px 0 10px 0;
+}
+
+.location-profile {
+    margin: 0 0 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-list {
+    padding: 20px;
+}
+
+.top-location-label {
+    color: chocolate;
+    font-weight: bold;
+}
+
+.top-location-label:hover {
+  color: coral;
+  cursor: pointer;
+}
+
+h3.top-locations-label {
+}

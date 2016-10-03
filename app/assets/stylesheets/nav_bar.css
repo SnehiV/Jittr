@@ -47,6 +47,7 @@ div#react-autowhatever-1 {
     width: 200px;
     border-left: 1px solid white;
     border-right: 1px solid white;
+    z-index: 100;
 }
 .react-autosuggest__suggestion {
     padding: 5px;

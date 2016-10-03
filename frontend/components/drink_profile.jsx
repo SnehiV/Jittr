@@ -88,15 +88,17 @@ class DrinkProfile extends React.Component{
       });
     return(
       <div className="drink-profile-container">
-        <div className="drink-profile-content">
+        <div className="drink-profile-content-left">
           {Profile}
           <CheckInFeed checkIns={this.state.checkIns} />
         </div>
-        <div className="user-list-container">
-          <h3>Users who drink {this.state.name}</h3>
-          <ul className='user-list'>
-            {UserList}
-          </ul>
+        <div className="drink-profile-content-right">          
+          <div className="user-list-container">
+            <h3>Users who drink {this.state.name}</h3>
+            <ul className='user-list'>
+              {UserList}
+            </ul>
+          </div>
         </div>
       </div>
     );

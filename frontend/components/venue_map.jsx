@@ -17,7 +17,6 @@ class VenueMap extends React.Component{
   }
 
   componentDidUpdate(){
-    console.log(this.mapOptions);
     const mapDOMNode = this.refs.map;
 
     this.map = new google.maps.Map(mapDOMNode, this.mapOptions);
