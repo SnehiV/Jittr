@@ -9,8 +9,10 @@ class TopLocations extends React.Component{
     this.state = {
       filter: 'nearby',
       venues: [],
+      checkIns: {},
       venueRatings: [],
       currentLocation: {lat: 37.773972, lng: -122.431297},
+      allVenues: []
     };
 
     this.venueRatings = [];
@@ -32,10 +34,13 @@ class TopLocations extends React.Component{
   componentWillReceiveProps(nextProps){
     if (Object.keys(nextProps.checkIns).length > 0){
       this.setState({
-        venues: this.sortByRating(nextProps.checkIns, nextProps.venues)
+        checkIns: nextProps.checkIns,
+        venues: this.sortByRating(nextProps.checkIns, nextProps.venues, this.state.filter),
+        allVenues: nextProps.venues
       });
     } else {
       this.setState({
+        allVenues: nextProps.venues,
         venues: this.sortByDistance(nextProps.venues)
       });
     }
@@ -103,7 +108,7 @@ class TopLocations extends React.Component{
     return Math.round((total / count)*2)/2;
   }
 
-  sortByRating(checkIns, locations){
+  sortByRating(checkIns, locations, filter){
     const compareRating = (location1, location2) => {
 
 
@@ -122,7 +127,11 @@ class TopLocations extends React.Component{
     let venues = Object.keys(locations).map(key => locations[key]);
     let filteredVenues = venues.filter(venue => {
       let relatedCheckIns = this.findRelatedCheckIns(checkIns, venue.id);
-      return ((Object.keys(relatedCheckIns).length !== 0) && (this.distance(venue.lat, venue.lng) < 50));
+      if (filter === 'nearby') {
+        return ((Object.keys(relatedCheckIns).length !== 0) && (this.distance(venue.lat, venue.lng) < 50));
+      } else {
+        return (Object.keys(relatedCheckIns).length !== 0);
+      }
     });
     filteredVenues.forEach(venue => {
       let relatedCheckIns = this.findRelatedCheckIns(checkIns, venue.id);
@@ -159,13 +168,26 @@ class TopLocations extends React.Component{
     });
   }
 
+  handleSelect(e){
+    this.setState({
+      venues: this.sortByRating(this.state.checkIns, this.state.allVenues, e.target.value)
+    });
+  }
+
 
 
   render(){
     return(
       <div className='top-locations'>
           <div className='location-list-container'>
-            <h3 className='top-locations-label'>Top Locations Near You</h3>
+            <div className='top-locations-header'>
+              <h3 className='top-locations-label'>Top Locations</h3>
+              <select name='filter' onChange={this.handleSelect.bind(this)}>
+                <option value='nearby'>Nearby</option>
+                <option value='overall'>Overall</option>
+              </select>
+            </div>
+
             <ul className='location-list'>
               {this.locationsList()}
             </ul>

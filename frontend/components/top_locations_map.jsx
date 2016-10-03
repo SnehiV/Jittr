@@ -14,7 +14,7 @@ class TopLocationsMap extends React.Component{
       center: nextProps.currentLocation,
       zoom: 11
     };
-
+    console.log(nextProps.venues);
     this.venues = nextProps.venues;
   }
 
@@ -54,9 +54,7 @@ class TopLocationsMap extends React.Component{
       let lat = parseFloat(venue.lat);
       let lng = parseFloat(venue.lng);
       let position = {lat: lat, lng: lng};
-      if (this.distance(position.lat, position.lng) < 50){
-        bounds.extend(position);
-      }
+      bounds.extend(position);
       let label = labels[idx];
       let marker = new google.maps.Marker({
         position: position,

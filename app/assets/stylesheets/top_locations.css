@@ -44,4 +44,16 @@
 }
 
 h3.top-locations-label {
+  border: none;
+}
+
+.top-locations-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px 0 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+select {
+    font-size: large;
 }
