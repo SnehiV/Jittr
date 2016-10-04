@@ -15,6 +15,7 @@ class Index extends React.Component{
     let checkInParams = {checkIn: {filter: 'friends'}};
     this.props.fetchCheckIns(checkInParams);
     this.props.fetchFriendshipData();
+    this.props.fetchLocations();
   }
 
   render() {
@@ -27,7 +28,9 @@ class Index extends React.Component{
         <div className="nonCheckIn-content">
           <CheckInForm session={this.props.session}
             newCheckIn={this.props.newCheckIn}
-            errors={this.props.errors} />
+            errors={this.props.errors}
+            drinks={this.props.drinks}
+            locations={this.props.locations} />
           <FriendRequestContainer />
         </div>
       </div>

@@ -22,7 +22,7 @@ form.checkIn-form {
 .checkIn-input {
     margin: 10px 7px 7px 7px;
     font-size: 15px;
-    width: 40%;
+    width: 200px;
     padding: 5px;
     border: 2px solid lightgray;
     opacity: 1;
@@ -193,12 +193,32 @@ textarea.checkIn-input::-webkit-input-placeholder {
     background-color: white;
     padding: 20px;
     margin-bottom: 40px;
+    box-shadow: 2px 1px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 .checkIn-feed-container {
     width: 100%;
     background-color: white;
     padding: 20px;
+    box-shadow: 2px 1px 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+.checkIn-form > .inputSearches > .react-autosuggest__container {display: flex;width: 200px;}
+
+.checkIn-form > .inputSearches > .react-autosuggest__container > .react-autosuggest__input {
+    font-size: 15px;
+    padding: 5px;
+}
+
+#react-autowhatever-2 {
+    border: 2px solid lightgray;
+}
+
+.inputSearches {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 120px;
 }
 
 .errors > li {

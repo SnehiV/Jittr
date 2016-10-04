@@ -2,19 +2,23 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router';
 import SearchContainer from './search_container';
+import TopLocationsContainer from './top_locations_container';
 
 class App extends React.Component{
   constructor(props){
     super(props);
   }
 
+
   render(){
     let currentUserProfileLink;
+    let username;
     if (this.props.currentUser) {
       let currentUserRoute = `/users/${this.props.currentUser.id}`;
-      currentUserProfileLink = <li><Link to={currentUserRoute}>Profile</Link></li>;
+      currentUserProfileLink = <Link to={currentUserRoute}>Profile</Link>;
+      username = this.props.currentUser.username;
     }
-
+    let triangle = "  ▼";
     return(
       <div className="app-container">
         <nav className="navbar">
@@ -23,10 +27,16 @@ class App extends React.Component{
           </h1>
           <ul className="nav-list">
             <li><Link to="/home">Recent Activity</Link></li>
-            {currentUserProfileLink}
+            <li><Link to="/TopLocations">Top Locations</Link></li>
             <li><Link to="/friends">Friends</Link></li>
             <section className="search-bar"><SearchContainer /></section>
-            <li><a onClick={this.props.handleLogout}>Logout</a></li>
+            <div className='dropdown'>
+              <li className="dropbtn">{username}<p className='triangle'>{triangle}</p></li>
+                <ul className="dropdown-content">
+                  {currentUserProfileLink}
+                  <a onClick={this.props.handleLogout}>Logout</a>
+                </ul>
+            </div>
           </ul>
         </nav>
         {this.props.children}

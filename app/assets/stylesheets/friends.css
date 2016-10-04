@@ -17,6 +17,7 @@
     align-items: center;
     background-color: white;
     padding-bottom: 30px;
+    box-shadow: 2px 1px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 .friends-list {
@@ -45,11 +46,12 @@
 .friend-requests-container {
     background-color: white;
     padding: 20px;
+    height: 99%;
+    box-shadow: 2px 1px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 
 .friend-container {
-    width: 30%;
     background-color: white;
 }
 
@@ -69,6 +71,22 @@ body {
     font-size: larger;
 }
 
+.friend-requests-buttons {
+    margin-left: 50px;
+}
+
 
 .friend > a {color: chocolate;}
 .friend > a:hover {color: coral; }
+
+.request-list > li > div > a:hover {
+    color: coral;
+}
+
+.request-button {
+    font-size: 12px;
+    border-radius: 10%;
+    color: moccasin;
+    background-color: chocolate;
+    margin: 5px;
+}

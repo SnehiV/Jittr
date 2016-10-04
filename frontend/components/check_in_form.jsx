@@ -1,5 +1,8 @@
 import React from 'react';
 import Rating from 'react-rating';
+import DrinkSearch from './drink_search';
+import LocationSearch from './location_search';
+import NativeListener from 'react-native-listener';
 
 class CheckInForm extends React.Component{
   constructor(props){
@@ -21,22 +24,41 @@ class CheckInForm extends React.Component{
     return e => this.setState({[field]: e.target.value});
   }
 
-  handleSubmit(){
-    return (e) => {
-      e.preventDefault();
 
-      const checkInParams = {checkIn: {
-        drink_name: this.state.drink_name,
-        location: this.state.location,
+  handleEnter(e){
+    if (e.charCode == 13){
+      return false;
+    }
+    if (e.keyCode == 13){
+      return false;
+    }
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    let checkInParams = {checkIn: {
+      drink_name: this.state.drink_name,
+      location_name: this.state.location,
+      review: this.state.review,
+      user_id: this.state.user_id,
+      username: this.state.username,
+      rating: this.state.initialRating
+    }};
+    if (window.drinkInput && window.venueInput){
+      checkInParams = {checkIn: {
+        drink_name: window.drinkInput.drink_name,
+        drink_id: window.drinkInput.drink_id,
+        location_name: window.venueInput.location_name,
+        location_id: window.venueInput.location_id,
         review: this.state.review,
         user_id: this.state.user_id,
         username: this.state.username,
         rating: this.state.initialRating
       }};
+    }
 
-      this.props.newCheckIn(checkInParams);
-      this.setState({drink_name: "", location: "", review: ""});
-    };
+    this.props.newCheckIn(checkInParams);
+    this.setState({drink_name: "", location: "", review: ""});
   }
 
   updateRating(rating){
@@ -63,43 +85,37 @@ class CheckInForm extends React.Component{
     return(
       <div className="checkIn-form-container">
         <h3>Check In</h3>
-        <form className="checkIn-form" onSubmit={this.handleSubmit()}>
-          <input
-            className="checkIn-input"
-            type="text"
-            placeholder="Drink..."
-            value={this.state.drink_name}
-            onChange={this.update('drink_name')} />
+        <NativeListener  onKeyPress={this.handleEnter}>
+          <form className="checkIn-form" onSubmit={this.handleSubmit}>
+            <div className='inputSearches'>
+              <DrinkSearch drinks={this.props.drinks} />
 
-          <input
-            className="checkIn-input"
-            placeholder="Location..."
-            type="text"
-            value={this.state.location}
-            onChange={this.update('location')} />
+              <LocationSearch locations={this.props.locations} />
+            </div>
 
-          <textarea
-            className="checkIn-input"
-            placeholder="Review..."
-            value={this.state.review}
-            onChange={this.update('review')} />
+            <textarea
+              className="checkIn-input"
+              placeholder="Review..."
+              value={this.state.review}
+              onChange={this.update('review')} />
 
-          <div className="hover-rater">
-            <h4>Rating:</h4>
-            <Rating initialRate={this.state.initialRating}
-              empty={greyCup} full={colorCup}
-              placeholder={colorCup}
-              onChange={this.updateRating.bind(this)}
-              onClick={this.updateInitial.bind(this)}/>
-          </div>
+            <div className="hover-rater">
+              <h4>Rating:</h4>
+              <Rating initialRate={this.state.initialRating}
+                empty={greyCup} full={colorCup}
+                placeholder={colorCup}
+                onChange={this.updateRating.bind(this)}
+                onClick={this.updateInitial.bind(this)}/>
+            </div>
 
-          <input type="hidden" value={this.props.session.currentUser.id} />
+            <input type="hidden" value={this.props.session.currentUser.id} />
 
-          <button className="check-in-button">Check In</button>
+            <button className="check-in-button">Check In</button>
 
-          <ul className='errors'>{errors}</ul>
+            <ul className='errors'>{errors}</ul>
 
-        </form>
+          </form>
+        </NativeListener>
       </div>
     );
   }

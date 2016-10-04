@@ -33,7 +33,6 @@ class CheckInItem extends React.Component{
       this.locationId = this.props.checkIn.location_id;
       locationRoute = `/locations/${this.locationId}`;
     }
-    console.log(locationRoute);
     return(
       <div className="checkIn-item">
         <h4>

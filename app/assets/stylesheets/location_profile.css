@@ -2,17 +2,12 @@
   height: 250px;
   width: 350px;
   margin: 30px;
+  padding-bottom: 5px;
+  box-shadow: 2px 1px 10px 4px rgba(0, 0, 0, 0.2);
 }
 
 .location-profile-container {
   display: flex;
   justify-content: space-around;
   background-color: oldlace;
-}
-.location-profile-container-left {
-
-}
-
-.location-profile-container-right {
-
 }

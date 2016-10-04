@@ -14,7 +14,6 @@ class TopLocationsMap extends React.Component{
       center: nextProps.currentLocation,
       zoom: 11
     };
-    console.log(nextProps.venues);
     this.venues = nextProps.venues;
   }
 
