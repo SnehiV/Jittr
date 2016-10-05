@@ -117,10 +117,11 @@
  }
 
 
- .field > h3 {
+ .logo-buttons > h3 {
      font-size: 30px;
      color: moccasin;
-     font-family: inherit;
+     font-family: 'Calligraffitti';
+     font: cursive;
      text-decoration: none;
      border: none;
      padding: 0;

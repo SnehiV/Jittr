@@ -211,7 +211,7 @@ textarea.checkIn-input::-webkit-input-placeholder {
 }
 
 #react-autowhatever-2 {
-  border: 2px solid lightgray;
+  border: 1px solid lightgray;
   z-index: 105;
   background-color: white;
   position: absolute;
@@ -220,11 +220,11 @@ textarea.checkIn-input::-webkit-input-placeholder {
 }
 
 #react-autowhatever-3 {
-    border: 2px solid lightgray;
+    border: 1px solid lightgray;
     z-index: 100;
     background-color: white;
     position: absolute;
-    top: 310px;
+    top: 315px;
     width: 200px;
 }
 
