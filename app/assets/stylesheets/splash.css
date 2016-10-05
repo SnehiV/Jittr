@@ -115,6 +115,22 @@
    flex-direction: column;
    align-items: center;
  }
+ 
+ .session-header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.session-header > h3 {
+  font-size: 30px;
+  color: moccasin;
+  font-family: 'Calligraffitti';
+  font: cursive;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+}
 
 
  .logo-buttons > h3 {

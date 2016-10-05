@@ -69,10 +69,12 @@ class SessionForm extends React.Component {
     return(
       <div className="splash-page">
         <form className="sessionForm" onSubmit={this.handleSubmit()}>
-            <h1 className="field">
-              <Link to="/" className="logo">Jittr</Link>
+            <div className='session-header'>
+              <h1 className="field">
+                <Link to="/" className="logo">Jittr</Link>
+              </h1>
               <h3>Sip, Share</h3>
-            </h1>
+            </div>
             <div className="splash-links">
               <input
                 className="input1"
