@@ -8,9 +8,9 @@ class TopLocations extends React.Component{
     super(props);
     this.state = {
       filter: 'nearby',
+      filterDistance: 10,
       venues: [],
       checkIns: {},
-      venueRatings: [],
       currentLocation: {lat: 37.773972, lng: -122.431297},
       allVenues: []
     };
@@ -35,7 +35,7 @@ class TopLocations extends React.Component{
     if (Object.keys(nextProps.checkIns).length > 0){
       this.setState({
         checkIns: nextProps.checkIns,
-        venues: this.sortByRating(nextProps.checkIns, nextProps.venues, this.state.filter),
+        venues: this.venueFilter(nextProps.checkIns, nextProps.venues, this.state.filter),
         allVenues: nextProps.venues
       });
     } else {
@@ -62,8 +62,9 @@ class TopLocations extends React.Component{
             Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
             Math.sin(dLon/2) * Math.sin(dLon/2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    let distance = R * c; // Distance in km
-    return distance;
+    let distance = R * c;
+     // Distance in km
+    return distance * 0.621371;
   }
 
   sortByDistance(locations){
@@ -108,7 +109,7 @@ class TopLocations extends React.Component{
     return Math.round((total / count)*2)/2;
   }
 
-  sortByRating(checkIns, locations, filter){
+  venueFilter(checkIns, locations, filter, filterDistance = this.state.filterDistance){
     const compareRating = (location1, location2) => {
 
 
@@ -128,7 +129,7 @@ class TopLocations extends React.Component{
     let filteredVenues = venues.filter(venue => {
       let relatedCheckIns = this.findRelatedCheckIns(checkIns, venue.id);
       if (filter === 'nearby') {
-        return ((Object.keys(relatedCheckIns).length !== 0) && (this.distance(venue.lat, venue.lng) < 50));
+        return ((Object.keys(relatedCheckIns).length !== 0) && (this.distance(venue.lat, venue.lng) < filterDistance));
       } else {
         return (Object.keys(relatedCheckIns).length !== 0);
       }
@@ -170,22 +171,43 @@ class TopLocations extends React.Component{
 
   handleSelect(e){
     this.setState({
-      venues: this.sortByRating(this.state.checkIns, this.state.allVenues, e.target.value)
+      venues: this.venueFilter(this.state.checkIns, this.state.allVenues, e.target.value, this.state.filterDistance),
+      filter: e.target.value
+    });
+  }
+
+  handleDistanceFilter(e){
+    this.setState({
+      venues: this.venueFilter(this.state.checkIns, this.state.allVenues, this.state.filter, e.target.value)
     });
   }
 
 
 
   render(){
+    let distanceFilter = <div></div>;
+    if (this.state.filter === 'nearby'){
+      distanceFilter =
+      <select name='distance-filter' defaultValue={10} onChange={this.handleDistanceFilter.bind(this)}>
+        <option value={5}>5 miles</option>
+        <option value={10}>10 miles</option>
+        <option value={25}>20 miles</option>
+        <option value={50}>50 miles</option>
+        <option value={100}>100 miles</option>
+      </select>;
+    }
     return(
       <div className='top-locations'>
           <div className='location-list-container'>
             <div className='top-locations-header'>
               <h3 className='top-locations-label'>Top Locations</h3>
-              <select name='filter' onChange={this.handleSelect.bind(this)}>
-                <option value='nearby'>Nearby</option>
-                <option value='overall'>Overall</option>
-              </select>
+              <div className='selectors'>
+                <select name='filter' onChange={this.handleSelect.bind(this)}>
+                  <option value='nearby'>Nearby</option>
+                  <option value='overall'>Overall</option>
+                </select>
+                {distanceFilter}
+              </div>
             </div>
 
             <ul className='location-list'>

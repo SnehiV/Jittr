@@ -18,7 +18,6 @@ class App extends React.Component{
       currentUserProfileLink = <Link to={currentUserRoute}>Profile</Link>;
       username = this.props.currentUser.username;
     }
-    let triangle = "  ▼";
     return(
       <div className="app-container">
         <nav className="navbar">
@@ -31,7 +30,7 @@ class App extends React.Component{
             <li><Link to="/friends">Friends</Link></li>
             <section className="search-bar"><SearchContainer /></section>
             <div className='dropdown'>
-              <li className="dropbtn">{username}<p className='triangle'>{triangle}</p></li>
+              <li className="dropbtn">{username}&nbsp;<i className="fa fa-angle-down" aria-hidden="true"></i></li>
                 <ul className="dropdown-content">
                   {currentUserProfileLink}
                   <a onClick={this.props.handleLogout}>Logout</a>

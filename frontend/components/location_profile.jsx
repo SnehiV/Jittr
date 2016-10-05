@@ -57,6 +57,7 @@ class LocationProfile extends React.Component{
     let usernames = [];
     if (this.state.checkIns) {
       Object.keys(this.state.checkIns).forEach((checkInId => {
+        console.log(this.state.checkIns[checkInId]);
         let user = this.state.checkIns[checkInId].user;
         if (!usernames.includes(user.username)){
           usernames.push(user.username);

@@ -211,7 +211,21 @@ textarea.checkIn-input::-webkit-input-placeholder {
 }
 
 #react-autowhatever-2 {
+  border: 2px solid lightgray;
+  z-index: 105;
+  background-color: white;
+  position: absolute;
+  top: 255px;
+  width: 200px;
+}
+
+#react-autowhatever-3 {
     border: 2px solid lightgray;
+    z-index: 100;
+    background-color: white;
+    position: absolute;
+    top: 310px;
+    width: 200px;
 }
 
 .inputSearches {

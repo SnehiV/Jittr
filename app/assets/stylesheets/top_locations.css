@@ -58,4 +58,12 @@ h3.top-locations-label {
 
 select {
     font-size: large;
+    margin-left: 20px;
+}
+
+.selectors {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }

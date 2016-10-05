@@ -11,3 +11,7 @@
   justify-content: space-around;
   background-color: oldlace;
 }
+
+.location-profile-content-left {
+    max-width: 50%;
+}

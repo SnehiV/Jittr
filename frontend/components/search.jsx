@@ -31,6 +31,10 @@ class Search extends React.Component{
       return this.props.drinks[drinkId];
     });
 
+    const venues = Object.keys(this.props.venues).map(id => (
+      this.props.venues[id]
+    ));
+
     if (inputLength === 0) {
       return [];
     } else {
@@ -41,30 +45,41 @@ class Search extends React.Component{
       let drinkResults = drinks.filter(drink =>
         drink.name.toLowerCase().slice(0, inputLength) === inputValue
       );
-      return suggestions.concat(userResults, drinkResults);
+
+      let venueResults = venues.filter(venue =>
+        venue.name.toLowerCase().slice(0, inputLength) === inputValue
+      );
+
+      return suggestions.concat(userResults, drinkResults, venueResults);
     }
   }
 
   getSuggestionType(suggestion){
     if (this.state.drinks.includes(suggestion.name)) {
       return 'drink';
+    } else if (suggestion.address) {
+      return 'venue';
     } else {
       return 'user';
     }
   }
 
   getSuggestionValue(suggestion) {
-    return suggestion.name;
+    if (this.getSuggestionType(suggestion) === 'user') {
+      return suggestion.username;
+    } else {
+      return suggestion.name;
+    }
   }
 
   renderSuggestion(suggestion, {query}) {
-    if (this.getSuggestionType(suggestion) === 'drink') {
+    if (this.getSuggestionType(suggestion) === 'user') {
       return (
-        <span className='search-item'>{suggestion.name}</span>
+        <span className='search-item'>{suggestion.username}</span>
       );
     } else {
       return (
-        <span className='search-item'>{suggestion.username}</span>
+        <span className='search-item'>{suggestion.name}</span>
     );
     }
   }
@@ -93,8 +108,10 @@ class Search extends React.Component{
     let route;
      if (this.getSuggestionType(suggestion) === 'drink'){
        route = `drinks/${suggestion.id}`;
-     } else {
+     } else if (this.getSuggestionType(suggestion) === 'drink'){
        route = `users/${suggestion.id}`;
+     } else {
+       route = `locations/${suggestion.id}`;
      }
 
     this.setState({value: ""});
@@ -104,7 +121,7 @@ class Search extends React.Component{
   render(){
     const {value, suggestions} = this.state;
     const inputProps = {
-      placeholder: '🔎  Search users and coffee',
+      placeholder: '🔎  Search',
       value,
       onChange: this.onChange.bind(this),
     };

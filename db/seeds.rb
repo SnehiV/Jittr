@@ -53,7 +53,7 @@ CheckIn.create!(user_id: 7, drink_name: "Cold Brew", drink_id: 6, rating: 2, rev
 CheckIn.create!(user_id: 9, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Nothing better than a Macciato at Octane", location_name:"Octane", location_id: 27, username: "Irina")
 CheckIn.create!(user_id: 4, drink_name: "Zorro", drink_id: 9, rating: 5, review: "The perfect pick me up after that horrible traffic", location_name:"Octane", location_id: 27, username: 'Sally')
 CheckIn.create!(user_id: 8, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "The barita here is so talented.", location_name:"Octane", location_id: 27, username: 'Fernando')
-CheckIn.create!(user_id: 27, drink_name: "Americano", drink_id: 3, rating: 5, review: "It wasn't that great but the barista is so cool", location_name:"Octane", location_id: 27, username: 'Yeezy')
+CheckIn.create!(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 5, review: "It wasn't that great but the barista is so cool", location_name:"Octane", location_id: 27, username: 'Yeezy')
 
 CheckIn.create!(user_id: 8, drink_name: "Cubano", drink_id: 4, rating: 5, review: "perfection", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Fernando')
 CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 1, review: "tasted like milk. Maybe I should have got some cookies to go along with it", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Travy')

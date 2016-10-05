@@ -10,7 +10,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStatetoProps = state => ({
   users: state.users,
-  drinks: state.drinks.drinks
+  drinks: state.drinks.drinks,
+  venues: state.venues.locations
 });
 
 
