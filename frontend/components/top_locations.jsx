@@ -15,7 +15,7 @@ class TopLocations extends React.Component{
       allVenues: []
     };
 
-    this.venueRatings = [];
+    this.venueRatings = {};
 
   }
 
@@ -113,16 +113,16 @@ class TopLocations extends React.Component{
     const compareRating = (location1, location2) => {
 
 
-      if (location1[1] < location2[1]) {
-        return -1;
+      if (this.venueRatings[location1.id] < this.venueRatings[location2.id]) {
+        return 1;
       }
 
-      if (location1[1] === location2[1]) {
+      if (this.venueRatings[location1.id] === this.venueRatings[location2.id]) {
         return 0;
       }
 
-      if (location1[1] > location2[1]) {
-        return 1;
+      if (this.venueRatings[location1.id] > this.venueRatings[location2.id]) {
+        return -1;
       }
     };
     let venues = Object.keys(locations).map(key => locations[key]);
@@ -134,13 +134,12 @@ class TopLocations extends React.Component{
         return (Object.keys(relatedCheckIns).length !== 0);
       }
     });
+    this.venueRatings = {};
     filteredVenues.forEach(venue => {
       let relatedCheckIns = this.findRelatedCheckIns(checkIns, venue.id);
       let rating = parseFloat(this.averageRating(relatedCheckIns));
-      this.venueRatings.push(rating);
+      this.venueRatings[venue.id] = rating;
     });
-    // console.log(this.venueRatings);
-    // console.log(venues);
     const sortedLocations = filteredVenues.sort(compareRating);
     return sortedLocations.slice(0, 10);
   }
@@ -162,7 +161,7 @@ class TopLocations extends React.Component{
           <div className='location-profile'>
             <Link className='top-location-label' to={venueRoute}>{venue.name}</Link>
             <div>{venue.address}</div>
-            <RatingDisplay rating={this.venueRatings[idx]} />
+            <RatingDisplay rating={this.venueRatings[venue.id]} />
           </div>
         </l1>
       );
