@@ -16,49 +16,51 @@ User.create!(username: "Fernando", password: "password")
 User.create!(username: "Irina", password: "password")
 User.create!(username: "Julius", password: "password")
 
+checkins = []
 
-CheckIn.create!(user_id: 5, drink_name: "Americano", drink_id: 3, rating: 4, review: "People say a lot of bad things about Americanos but this is really good.", location_name:"Dancing Goats", location_id: 1, username: 'Pamela')
-CheckIn.create!(user_id: 10, drink_name: "Cold Brew", drink_id: 6, rating: 5, review: "I was feeling like having a cold drink and this cold brew was great", location_name:"Dancing Goats", location_id: 1, username: "Julius")
-CheckIn.create!(user_id: 7, drink_name: "Cubano", drink_id: 4, rating: 4, review: "Glad tourism to Cuba is about to happen because this coffee is really good", location_name:"Dancing Goats", location_id: 1, username: 'Guest')
-CheckIn.create!(user_id: 9, drink_name: "Cold Brew", drink_id: 6, rating: 3, review: "Very refreshing", location_name:"Dancing Goats", location_id: 1, username: 'Irina')
+checkins << CheckIn.new(user_id: 5, drink_name: "Americano", drink_id: 3, rating: 4, review: "People say a lot of bad things about Americanos but this is really good.", location_name:"Dancing Goats", location_id: 1, username: 'Pamela')
+checkins << CheckIn.new(user_id: 10, drink_name: "Cold Brew", drink_id: 6, rating: 5, review: "I was feeling like having a cold drink and this cold brew was great", location_name:"Dancing Goats", location_id: 1, username: "Julius")
+checkins << CheckIn.new(user_id: 7, drink_name: "Cubano", drink_id: 4, rating: 4, review: "Glad tourism to Cuba is about to happen because this coffee is really good", location_name:"Dancing Goats", location_id: 1, username: 'Guest')
+checkins << CheckIn.new(user_id: 9, drink_name: "Cold Brew", drink_id: 6, rating: 3, review: "Very refreshing", location_name:"Dancing Goats", location_id: 1, username: 'Irina')
 
-CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 2, review: "It was okay but maybe they shouldn't have rushed it.", location_name:"Working Girls' Cafe", location_id: 2, username: 'Travy')
-CheckIn.create!(user_id: 7, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "This was the perfect thing to cure the mid-afternoon sleepyness", location_name:"Working Girls' Cafe", location_id: 2, username: 'Guest')
+checkins << CheckIn.new(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 2, review: "It was okay but maybe they shouldn't have rushed it.", location_name:"Working Girls' Cafe", location_id: 2, username: 'Travy')
+checkins << CheckIn.new(user_id: 7, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "This was the perfect thing to cure the mid-afternoon sleepyness", location_name:"Working Girls' Cafe", location_id: 2, username: 'Guest')
 
-CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 2, review: "Pretty decent", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Julius')
-CheckIn.create!(user_id: 4, drink_name: "Cappucciuno", drink_id: 7, rating: 5, review: "Thay really know how to make a good Cappucciuno", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Sally')
-CheckIn.create!(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 4, review: "Somehow thay made an Americano palatable. It's still an Americano though.", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Yeezy')
-CheckIn.create!(user_id: 3, drink_name: "Guillermo", drink_id: 12, rating: 1, review: "I thought the Guillermo would be as good as the movies that one director makes. Not so.", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Weezy')
-CheckIn.create!(user_id: 8, drink_name: "Flat White", drink_id: 2, rating: 5, review: "Wanted something smooth and they made it perfect", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Fernando')
+checkins << CheckIn.new(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 2, review: "Pretty decent", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Julius')
+checkins << CheckIn.new(user_id: 4, drink_name: "Cappucciuno", drink_id: 7, rating: 5, review: "Thay really know how to make a good Cappucciuno", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Sally')
+checkins << CheckIn.new(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 4, review: "Somehow thay made an Americano palatable. It's still an Americano though.", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Yeezy')
+checkins << CheckIn.new(user_id: 3, drink_name: "Guillermo", drink_id: 12, rating: 1, review: "I thought the Guillermo would be as good as the movies that one director makes. Not so.", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Weezy')
+checkins << CheckIn.new(user_id: 8, drink_name: "Flat White", drink_id: 2, rating: 5, review: "Wanted something smooth and they made it perfect", location_name:"Catahoula Coffee Co", location_id: 3, username: 'Fernando')
 
-CheckIn.create!(user_id: 5, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "They know how to make the best Macchiatos at Philz", location_name:"Philz Coffee", location_id: 4, username: 'Pamela')
-CheckIn.create!(user_id: 4, drink_name: "Zorro", drink_id: 9, rating: 2, review: "Whoever made this better put on a mask like Zorro becuase this was terrible.", location_name:"Philz Coffee", location_id: 4, username: 'Sally')
-CheckIn.create!(user_id: 1, drink_name: "Palazzo", drink_id: 13, rating: 4, review: "The perfect drink for a hot day.", location_name:"Philz Coffee", location_id: 4, username: 'Weezy')
-CheckIn.create!(user_id: 8, drink_name: "Cafe au lait", drink_id: 7, rating: 3, review: "Fancy name made me think it would be good. It was okay though.", location_name:"Philz Coffee", location_id: 4, username: 'Fernando')
+checkins << CheckIn.new(user_id: 5, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "They know how to make the best Macchiatos at Philz", location_name:"Philz Coffee", location_id: 4, username: 'Pamela')
+checkins << CheckIn.new(user_id: 4, drink_name: "Zorro", drink_id: 9, rating: 2, review: "Whoever made this better put on a mask like Zorro becuase this was terrible.", location_name:"Philz Coffee", location_id: 4, username: 'Sally')
+checkins << CheckIn.new(user_id: 1, drink_name: "Palazzo", drink_id: 13, rating: 4, review: "The perfect drink for a hot day.", location_name:"Philz Coffee", location_id: 4, username: 'Weezy')
+checkins << CheckIn.new(user_id: 8, drink_name: "Cafe au lait", drink_id: 7, rating: 3, review: "Fancy name made me think it would be good. It was okay though.", location_name:"Philz Coffee", location_id: 4, username: 'Fernando')
 
-CheckIn.create!(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 3, review: "The most mediocre cappuciuno I've ever had", location_name:"Kaleidoscope Coffee", location_id: 5, username: 'Priyanka')
-CheckIn.create!(user_id: 9, drink_name: "Americano", drink_id: 3, rating: 1, review: "I think they used mop water to make this", location_name:"Kaleidoscope Coffee", location_id: 5, username: 'Irina')
-CheckIn.create!(user_id: 6, drink_name: "Guillermo", drink_id: 12, rating: 5, review: "This was absolutely wonderful", location_name:"Kaleidoscope Coffee", location_id: 5, username: 'Priyanka')
+checkins << CheckIn.new(user_id: 6, drink_name: "Cappucciuno", drink_id: 1, rating: 3, review: "The most mediocre cappuciuno I've ever had", location_name:"Kaleidoscope Coffee", location_id: 5, username: 'Priyanka')
+checkins << CheckIn.new(user_id: 9, drink_name: "Americano", drink_id: 3, rating: 1, review: "I think they used mop water to make this", location_name:"Kaleidoscope Coffee", location_id: 5, username: 'Irina')
+checkins << CheckIn.new(user_id: 6, drink_name: "Guillermo", drink_id: 12, rating: 5, review: "This was absolutely wonderful", location_name:"Kaleidoscope Coffee", location_id: 5, username: 'Priyanka')
 
-CheckIn.create!(user_id: 10, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "Of course the Italian cafe can make a good cappucciouno", location_name:"Bel Bacio - Italian Cafe", location_id: 6, username: 'Julius')
-CheckIn.create!(user_id: 7, drink_name: "Zorro", drink_id: 9, rating: 4, review: "I've had better but this was really good", location_name:"Bel Bacio - Italian Cafe", location_id: 6, username: 'Guest')
-CheckIn.create!(user_id: 6, drink_name: "Flat White", drink_id: 2, rating: 2, review: "If I wanted a cup of milk I would have stayed home.", location_name:"Bel Bacio - Italian Cafe", location_id: 6, username: 'Priyanka')
+checkins << CheckIn.new(user_id: 10, drink_name: "Cappucciuno", drink_id: 1, rating: 5, review: "Of course the Italian cafe can make a good cappucciouno", location_name:"Bel Bacio - Italian Cafe", location_id: 6, username: 'Julius')
+checkins << CheckIn.new(user_id: 7, drink_name: "Zorro", drink_id: 9, rating: 4, review: "I've had better but this was really good", location_name:"Bel Bacio - Italian Cafe", location_id: 6, username: 'Guest')
+checkins << CheckIn.new(user_id: 6, drink_name: "Flat White", drink_id: 2, rating: 2, review: "If I wanted a cup of milk I would have stayed home.", location_name:"Bel Bacio - Italian Cafe", location_id: 6, username: 'Priyanka')
 
-CheckIn.create!(user_id: 3, drink_name: "Cafe au lait", drink_id: 7, rating: 5, review: "I think I just died and went to coffee heaven", location_name:"Bellano Coffee", location_id: 18, username: 'Weezy')
-CheckIn.create!(user_id: 5, drink_name: "Cappucciuno", drink_id: 1, rating: 4, review: "Bellano Coffee can do no wrong", location_name:"Bellano Coffee", location_id: 18, username: 'Pamela')
-CheckIn.create!(user_id: 1, drink_name: "Guillermo", drink_id: 12, rating: 3, review: "I probably could have made something just as good at home", location_name:"Bellano Coffee", location_id: 18, username: 'Yeezy')
+checkins << CheckIn.new(user_id: 3, drink_name: "Cafe au lait", drink_id: 7, rating: 5, review: "I think I just died and went to coffee heaven", location_name:"Bellano Coffee", location_id: 18, username: 'Weezy')
+checkins << CheckIn.new(user_id: 5, drink_name: "Cappucciuno", drink_id: 1, rating: 4, review: "Bellano Coffee can do no wrong", location_name:"Bellano Coffee", location_id: 18, username: 'Pamela')
+checkins << CheckIn.new(user_id: 1, drink_name: "Guillermo", drink_id: 12, rating: 3, review: "I probably could have made something just as good at home", location_name:"Bellano Coffee", location_id: 18, username: 'Yeezy')
 
 
-CheckIn.create!(user_id: 7, drink_name: "Cold Brew", drink_id: 6, rating: 2, review: "The barista needs some practice", location_name:"Octane", location_id: 27, username: 'Guest')
-CheckIn.create!(user_id: 9, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Nothing better than a Macciato at Octane", location_name:"Octane", location_id: 27, username: "Irina")
-CheckIn.create!(user_id: 4, drink_name: "Zorro", drink_id: 9, rating: 5, review: "The perfect pick me up after that horrible traffic", location_name:"Octane", location_id: 27, username: 'Sally')
-CheckIn.create!(user_id: 8, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "The barita here is so talented.", location_name:"Octane", location_id: 27, username: 'Fernando')
-CheckIn.create!(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 5, review: "It wasn't that great but the barista is so cool", location_name:"Octane", location_id: 27, username: 'Yeezy')
+checkins << CheckIn.new(user_id: 7, drink_name: "Cold Brew", drink_id: 6, rating: 2, review: "The barista needs some practice", location_name:"Octane", location_id: 27, username: 'Guest')
+checkins << CheckIn.new(user_id: 9, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "Nothing better than a Macciato at Octane", location_name:"Octane", location_id: 27, username: "Irina")
+checkins << CheckIn.new(user_id: 4, drink_name: "Zorro", drink_id: 9, rating: 5, review: "The perfect pick me up after that horrible traffic", location_name:"Octane", location_id: 27, username: 'Sally')
+checkins << CheckIn.new(user_id: 8, drink_name: "Macchiato", drink_id: 5, rating: 5, review: "The barita here is so talented.", location_name:"Octane", location_id: 27, username: 'Fernando')
+checkins << CheckIn.new(user_id: 1, drink_name: "Americano", drink_id: 3, rating: 5, review: "It wasn't that great but the barista is so cool", location_name:"Octane", location_id: 27, username: 'Yeezy')
 
-CheckIn.create!(user_id: 8, drink_name: "Cubano", drink_id: 4, rating: 5, review: "perfection", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Fernando')
-CheckIn.create!(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 1, review: "tasted like milk. Maybe I should have got some cookies to go along with it", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Travy')
-CheckIn.create!(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 2, review: "Wayyyyyy to much sugar", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Julius')
+checkins << CheckIn.new(user_id: 8, drink_name: "Cubano", drink_id: 4, rating: 5, review: "perfection", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Fernando')
+checkins << CheckIn.new(user_id: 2, drink_name: "Flat White", drink_id: 2, rating: 1, review: "tasted like milk. Maybe I should have got some cookies to go along with it", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Travy')
+checkins << CheckIn.new(user_id: 10, drink_name: "Cafe au lait", drink_id: 7, rating: 2, review: "Wayyyyyy to much sugar", location_name:"Spike's Coffees & Tea", location_id: 14, username: 'Julius')
 
+checkins.shuffle.each{ |checkin| checkin.save}
 
 
 
